@@ -2191,6 +2191,8 @@ ipcMain.handle("open-creator-stream", async () => {
 
 ipcMain.handle("open-creator-xbox-profile", async () => {
   const { shell } = require("electron");
+  await shell.openExternal("https://t.me/molygench");
+  return { opened: "support", url: "https://t.me/molygench" };
 
   if (!isXboxAppInstalled()) {
     await shell.openExternal(CREATOR_XBOX_STORE_URL);
