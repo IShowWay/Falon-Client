@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Falon Starting</title>
+  <link rel="stylesheet" href="./splash.css" />
+</head>
+<body>
+  <div class="splash-background">
+    <img id="splashWallpaperImage" class="splash-wallpaper hidden" alt="" />
+    <video id="splashWallpaperVideo" class="splash-wallpaper hidden" autoplay muted loop playsinline></video>
+    <div class="splash-veil"></div>
+    <div class="splash-orb orb-a"></div>
+    <div class="splash-orb orb-b"></div>
+    <div class="splash-grid"></div>
+  </div>
+
+  <main class="splash-shell">
+    <section class="splash-card">
+      <div class="splash-logo-wrap">
+        <div class="splash-logo-ring"></div>
+        <div class="splash-logo">F</div>
+      </div>
+
+      <div class="splash-copy">
+        <div class="splash-kicker">FALON MANAGER</div>
+        <h1><span>Falon</span> запускается</h1>
+        <p id="splashStatus">Инициализация лаунчера...</p>
+      </div>
+
+      <div class="splash-progress-head">
+        <span>Подготовка клиента</span>
+        <b id="splashPercent">0%</b>
+      </div>
+      <div class="splash-progress" aria-label="loading progress">
+        <i id="splashProgressBar"></i>
+      </div>
+      <div class="splash-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
+  </main>
+
+  <script>
+    const splashState = {
+      stage: 'boot',
+      target: 8,
+      shown: 0,
+      lastPayloadPercent: 0,
+      startedAt: Date.now()
+    };
+
+    function applySplashWallpaper(data) {
+      const img = document.getElementById('splashWallpaperImage');
+      const video = document.getElementById('splashWallpaperVideo');
+      img.classList.add('hidden');
+      video.classList.add('hidden');
+      img.removeAttribute('src');
+      video.removeAttribute('src');
+      if (!data || !data.url || !data.kind) return;
+      const safeUrl = `${data.url}${data.url.includes('?') ? '&' : '?'}v=${data.ts || Date.now()}`;
+      if (data.kind === 'video') {
+        video.src = safeUrl;
+        video.classList.remove('hidden');
+        video.load();
+        video.play().catch(() => {});
+      } else {
+        img.src = safeUrl;
+        img.classList.remove('hidden');
+      }
+    }
+
+    function stageText(payload = {}) {
+      if (payload.stage === 'first-run') return 'Первый запуск: подготавливаю базу версий...';
+      if (payload.stage === 'cached') return 'Кэш версий найден. Открываю Falon...';
+      if (payload.stage === 'catalog') return payload.firstRun ? 'Первый запуск: загружаю каталог версий...' : 'Загружаю каталог версий...';
+      if (payload.stage === 'catalog-ready') return payload.firstRun ? `Первый запуск: проверяю версии 0/${payload.total || 0}` : `Проверяю версии: 0/${payload.total || 0}`;
+      if (payload.stage === 'probing') return payload.firstRun ? `Первый запуск: проверяю версии ${payload.completed || 0}/${payload.total || 0}` : `Проверяю версии: ${payload.completed || 0}/${payload.total || 0}`;
+      if (payload.stage === 'done') return 'Готово. Запускаю Falon...';
+      if (payload.stage === 'fallback') return 'Проверка пропущена. Запускаю Falon...';
+      return 'Инициализация лаунчера...';
+    }
+
+    function renderValidationProgress(payload = {}) {
+      const status = document.getElementById('splashStatus');
+      const stage = String(payload.stage || splashState.stage || 'boot');
+      const rawPct = Math.max(0, Math.min(100, Number(payload.percent ?? 0)));
+      const pct = Math.max(splashState.lastPayloadPercent, rawPct);
+      splashState.stage = stage;
+      splashState.lastPayloadPercent = pct;
+
+      let target = pct;
+      if (stage === 'done' || stage === 'fallback' || stage === 'cached') target = 100;
+      else if (stage === 'catalog') target = Math.max(14, Math.min(34, pct || 14));
+      else if (stage === 'catalog-ready') target = Math.max(34, Math.min(48, pct || 34));
+      else if (stage === 'probing') target = Math.max(48, Math.min(96, pct || 48));
+      else target = Math.max(8, Math.min(24, pct || 8));
+
+      // Главное: цель никогда не уменьшается, поэтому проценты не откатываются назад.
+      splashState.target = Math.max(splashState.target, target, splashState.shown);
+      if (status) status.textContent = stageText(payload);
+    }
+
+    function setProgress(value) {
+      const bar = document.getElementById('splashProgressBar');
+      const percent = document.getElementById('splashPercent');
+      const next = Math.max(splashState.shown, Math.min(100, value));
+      splashState.shown = next;
+      if (bar) bar.style.width = `${next}%`;
+      if (percent) percent.textContent = `${Math.floor(next)}%`;
+    }
+
+    function animateSplashProgress() {
+      setInterval(() => {
+        const elapsed = Date.now() - splashState.startedAt;
+        const stage = splashState.stage;
+        let target = splashState.target;
+
+        // Если настоящих событий мало, аккуратно ползём вперёд, но до 100 только на done/fallback/cached.
+        if (stage !== 'done' && stage !== 'fallback' && stage !== 'cached') {
+          const softCap = elapsed < 1800 ? 38 : elapsed < 4200 ? 72 : 94;
+          target = Math.max(target, Math.min(softCap, splashState.shown + 0.9));
+        }
+
+        const diff = target - splashState.shown;
+        if (diff <= 0) return;
+        const step = stage === 'done' || stage === 'fallback' || stage === 'cached'
+          ? Math.max(1.2, diff * 0.14)
+          : Math.max(0.18, Math.min(1.1, diff * 0.055));
+        setProgress(splashState.shown + step);
+      }, 34);
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      renderValidationProgress({ stage: 'catalog', percent: 2 });
+      animateSplashProgress();
+      try {
+        const appearance = await window.splashApi.getAppearance();
+        if (appearance?.wallpaper) applySplashWallpaper(appearance.wallpaper);
+        if (appearance?.validation) renderValidationProgress(appearance.validation);
+      } catch {}
+      window.splashApi.onValidationProgress(renderValidationProgress);
+    });
+  </script>
+</body>
+</html>

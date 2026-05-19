@@ -1,0 +1,115 @@
+# Falon Client public repository allowlist
+# Everything is private by default. Unignore only files meant for GitHub.
+*
+
+# Keep folders traversable
+!*/
+
+# Public project metadata
+!.gitignore
+!README.md
+!LICENSE
+!SECURITY.md
+!CONTRIBUTING.md
+!package.json
+!package-lock.json
+
+# GitHub presentation / automation
+!.github/
+!.github/**
+!docs/
+!docs/**
+
+# Public app source
+!src/
+!src/main.js
+!src/preload.js
+!src/renderer.html
+!src/renderer.js
+!src/style.css
+!src/splash.html
+!src/splash.css
+!src/splash-preload.js
+!src/game-manager.js
+
+# Public assets only
+!src/assets/
+!src/assets/classic-icon.png
+!src/assets/falon-avatar.png
+!src/assets/falon-icon.ico
+!src/assets/falon-icon.png
+
+# Optional wallpaper bundled with the client
+!Wallapers/
+!Wallapers/default-wallpaper.mp4
+
+# Native helper source may be public; compiled binaries stay private/local.
+!src/native/
+!src/native/FalonLegacyUwpHelper.go
+
+# Hard private denylist — do not publish even if rules above change later.
+node_modules/
+dist/
+out/
+build/
+*.exe
+*.exe~
+*.dll
+*.blockmap
+*.msi
+*.appx
+*.msix
+*.zip
+*.rar
+*.7z
+
+# Private license keys / vaults / sealing scripts
+generated_license_keys_*.txt
+src/Falon-access-keys.txt
+src/assets/access-keys.json
+src/assets/access-keys.vault.json
+seal_access_keys.js
+
+# Secrets / local env
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*secret*
+*token*
+
+# Local debug / audit / temporary files
+LEGACY_UWP_AUDIT*.jsonl
+LEGACY_UWP_AUDIT*.md
+LEGACY_UWP_BROKEN.md
+LEGACY_CATALOG_CURRENT.json
+tmp_*
+debug_*
+probe_*
+test_*
+inspect_*
+check_*.py
+latest_batch_bads.py
+merge_broken*.py
+rebuild_broken_union.py
+recheck_versions.py
+summarize_audit.py
+bruteforce_wu.py
+wu_probe*.py
+parse_bing.py
+scan_rg_old.py
+search_repo.py
+find_non_wu_errors.py
+verify_wu_fix.py
+TokenTest.cs
+*.ps1
+*.out
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>MC Falon</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="background">
+    <img id="wallpaperImage" class="wallpaper hidden" alt="" />
+    <video id="wallpaperVideo" class="wallpaper hidden" autoplay muted loop playsinline></video>
+    <div class="bg-overlay"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+
+  <div class="window-drag-strip" aria-hidden="true"><span></span></div>
+
+  <section id="loginScreen" class="login-screen">
+    <select id="langSelectLogin" class="lang-select">
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="en">🇺🇸 English</option>
+      <option value="kk">🇰🇿 Қазақша</option>
+      <option value="uk">🇺🇦 Українська</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+    </select>
+    <div class="login-time">
+      <div id="clock">00:00</div>
+      <div id="date">Loading...</div>
+    </div>
+
+    <div class="login-card glass cut">
+      <button id="launcherIconBtn" class="avatar" title="Поменять иконку"><img id="launcherIconImg" src="./assets/falon-icon.png" alt="Falon" /></button>
+      <h1 data-i18n="appName">Falon</h1>
+
+      <div class="key-row">
+        <input id="accessKey" type="password" data-i18n-placeholder="accessKey" placeholder="Ключ доступа" autocomplete="off" />
+        <button id="loginBtn" title="Войти">↵</button>
+      </div>
+
+      <button id="wallpaperBtnLogin" class="wall-btn" data-i18n="uploadWallpaper">Загрузить обои</button>
+      <button id="exitBtnLogin" class="exit-btn" data-i18n="exit">Выйти</button>
+      <button id="buyKeyBtn" class="buy-key-btn" data-i18n="buyKey">Купить ключ</button>
+      <button id="freeKeyBtn" class="free-key-btn" data-i18n="freeKey">Бесплатный ключ</button>
+      <div id="loginError" class="login-error"></div>
+    </div>
+  </section>
+
+  <section id="appScreen" class="app-screen home-mode hidden">
+    <header class="topbar glass cut">
+      <div class="top-brand">
+        <button id="homeBtn" class="home-btn hidden" title="Главная">⌂</button>
+        <div>
+          <h2 data-i18n="appName">Falon</h2>
+          <p id="statusText" data-i18n="ready">Готов</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <select id="langSelectApp" class="lang-select app-lang">
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="en">🇺🇸 English</option>
+          <option value="kk">🇰🇿 Қазақша</option>
+          <option value="uk">🇺🇦 Українська</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+        </select>
+        <span id="licenseCountdown" class="license-countdown hidden" aria-live="polite"></span>
+        <button id="wallpaperBtnApp" class="icon-btn" data-i18n="wallpaper">Обои</button>
+        <button id="uiShapeToggleBtn" class="icon-btn" type="button" title="Переключить форму окна">UI: Округл.</button>
+        <button id="blurToggleBtn" class="icon-btn blur-toggle-btn" type="button">Блюр: Вкл</button>
+        <button id="scanBtn" class="icon-btn" data-i18n="refresh">Обновить</button>
+        <button id="logoutBtn" class="icon-btn" data-i18n="exit">Выйти</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="content glass cut">
+        <div id="homeView" class="view active home-view">
+          <div class="hub-grid">
+            <button class="hub-btn cut-small" data-view="install">
+              <span class="hub-icon">⇪</span>
+              <b data-i18n="upload">Загрузка</b>
+              <small data-i18n="uploadSub">Ресурсы, аддоны и миры.</small>
+            </button>
+            <button class="hub-btn cut-small" data-view="resources">
+              <span class="hub-icon">◫</span>
+              <b data-i18n="myResources">Мои ресурсы</b>
+              <small data-i18n="resourcesSub">RP/BP по выбранной версии / User.</small>
+            </button>
+            <button class="hub-btn cut-small" data-view="worlds">
+              <span class="hub-icon">▣</span>
+              <b data-i18n="worlds">Миры</b>
+              <small data-i18n="worldsSub">Миры выбранной версии / User.</small>
+            </button>
+            <button class="hub-btn cut-small" data-view="game">
+              <span class="hub-icon">▶</span>
+              <b data-i18n="game">Игра</b>
+              <small data-i18n="gameSub">Версии, установка и запуск.</small>
+            </button>
+          </div>
+
+          <div class="home-path cut-small">
+            <span data-i18n="users">Users</span>
+            <input id="rootPath" spellcheck="false" />
+            <button id="pickRootBtn" data-i18n="path">Путь</button>
+          </div>
+        </div>
+
+        <div id="installView" class="view">
+          <div class="view-head">
+            <h3 data-i18n="upload">Загрузка</h3>
+            <p data-i18n="uploadSub">Ресурсы, аддоны и миры.</p>
+          </div>
+
+          <div id="dropZone" class="drop-zone cut-small">
+            <div class="plus">＋</div>
+            <b data-i18n="dropFile">Перетащи файл</b>
+            <span>.mcpack .mcaddon .mcworld .zip</span>
+          </div>
+
+          <div class="input-line">
+            <input id="filePath" data-i18n-placeholder="noFile" placeholder="Файл не выбран" spellcheck="false" />
+            <button id="pickFileBtn" data-i18n="file">Файл</button>
+          </div>
+
+          <button id="installBtn" type="button" class="big-action install-primary cut-small" data-i18n="install">Установить</button>
+          <div id="installStatus" class="install-status"></div>
+
+          <div class="split profiles-only">
+            <div>
+              <div class="mini-head">
+                <b data-i18n="profiles">Профили</b>
+                <div>
+                  <button id="selectAllProfiles" data-i18n="all">Все</button>
+                  <button id="selectNoProfiles" data-i18n="clear">Снять</button>
+                </div>
+              </div>
+              <div id="profilesBox" class="list small"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="resourcesView" class="view">
+          <div class="view-head inline">
+            <div>
+              <h3 data-i18n="myResources">Мои ресурсы</h3>
+              <p data-i18n="resourcesSub">RP/BP по выбранной версии / User.</p>
+            </div>
+            <select id="resourceProfile"></select>
+          </div>
+          <div id="resourcesList" class="list"></div>
+        </div>
+
+        <div id="worldsView" class="view">
+          <div class="view-head inline">
+            <div>
+              <h3 data-i18n="worlds">Миры</h3>
+              <p data-i18n="worldsSub">Миры выбранной версии / User.</p>
+            </div>
+            <select id="worldProfile"></select>
+          </div>
+          <div class="mini-actions">
+            <button id="installWorldBtn" data-i18n="uploadToUser">Загрузить в User</button>
+          </div>
+          <div id="worldsList" class="list"></div>
+        </div>
+
+        <div id="gameView" class="view game-view">
+          <div class="view-head game-head">
+            <h3 data-i18n="game">Игра</h3>
+            <p data-i18n="gameSub">Версии, установка и запуск.</p>
+          </div>
+
+          <div class="game-toolbar cut-small">
+            <input id="gameSearch" data-i18n-placeholder="gameSearchPlaceholder" placeholder="Поиск версии, например 1.21.120" spellcheck="false" />
+            <select id="gameTypeFilter">
+              <option value="all" data-i18n="gameAllTypes">Все</option>
+              <option value="release" data-i18n="gameRelease">Release</option>
+              <option value="preview" data-i18n="gamePreview">Preview</option>
+              <option value="legacy" data-i18n="gameLegacy">Legacy UWP</option>
+            </select>
+            <button id="gameRefreshBtn" data-i18n="gameRefresh">Обновить версии</button>
+          </div>
+
+          <div class="game-actions cut-small">
+            <button id="gameOpenVersionsBtn" data-i18n="gameVersionsFolder">Папка версий</button>
+            <button id="gameOpenInstallersBtn" data-i18n="gameInstallersFolder">Пакеты</button>
+            <span id="gameStatus" class="game-status" data-i18n="gameReady">Каталог версий ещё не загружен.</span>
+          </div>
+
+          <div class="game-progress cut-small">
+            <div class="game-progress-track"><i id="gameProgressBar"></i></div>
+            <span id="gameProgressText">—</span>
+          </div>
+
+          <div id="gameLaunchOverlay" class="game-launch-overlay cut-small hidden" aria-live="polite">
+            <span class="game-launch-spinner" aria-hidden="true"></span>
+            <div class="game-launch-copy">
+              <b id="gameLaunchOverlayTitle">Запускаем игру…</b>
+              <span id="gameLaunchOverlayText">Подготавливаю Minecraft.</span>
+            </div>
+          </div>
+
+          <div class="game-columns">
+            <section class="game-panel cut-small">
+              <div class="mini-head game-mini-head">
+                <b data-i18n="gameAvailableVersions">Доступные версии</b>
+                <span id="gameCatalogSummary">—</span>
+              </div>
+              <div id="gameCatalogList" class="game-list"></div>
+            </section>
+
+            <section class="game-panel cut-small">
+              <div class="mini-head game-mini-head">
+                <b data-i18n="gameInstalledVersions">Установленные</b>
+                <span id="gameInstalledSummary">0</span>
+              </div>
+              <div id="gameInstalledList" class="game-list installed"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-panel glass cut">
+        <h3 data-i18n="status">Статус</h3>
+        <div class="stat">
+          <span data-i18n="profileCount">Профилей</span>
+          <b id="profileCount">0</b>
+        </div>
+        <div class="stat">
+          <span data-i18n="file">Файл</span>
+          <b id="fileName">—</b>
+        </div>
+        <div class="stat">
+          <span data-i18n="key">Ключ</span>
+          <b>ACTIVE</b>
+        </div>
+
+        <h3 class="log-title" data-i18n="log">Лог</h3>
+        <pre id="log"></pre>
+      </aside>
+    </main>
+  </section>
+
+
+  <div id="buyModal" class="buy-modal-backdrop hidden">
+    <div class="buy-modal glass cut">
+      <button id="closeBuyModal" class="modal-close">×</button>
+      <div class="buy-hero">
+        <div class="buy-kicker">Premium access</div>
+        <h2 data-i18n="buyKey">Купить ключ</h2>
+        <p data-i18n="buySub">Выбери способ оплаты и срок — всё покажем сразу и без путаницы.</p>
+      </div>
+
+      <div class="payment-tabs" role="tablist" aria-label="Payment method">
+        <button class="payment-tab is-active" data-pay-method="fiat" type="button" data-i18n="buyFiat">Обычная валюта</button>
+        <button class="payment-tab" data-pay-method="stars" type="button" data-i18n="buyStars">Telegram Stars</button>
+        <button class="payment-tab" data-pay-method="coins" type="button" data-i18n="buyCoins">TikTok Coins</button>
+      </div>
+
+      <div class="buy-panels">
+        <section id="buyFiatPanel" class="buy-panel">
+          <div class="buy-field">
+            <span data-i18n="chooseCurrency">Выберите валюту</span>
+            <select id="currencySelect" class="currency-select">
+              <option value="KZT">🇰🇿 Kazakhstani Tenge</option>
+              <option value="RUB">🇷🇺 Russian Ruble</option>
+              <option value="USD">🇺🇸 United States Dollar</option>
+              <option value="EUR">🇪🇺 Euro</option>
+              <option value="UAH">🇺🇦 Ukrainian Hryvnia</option>
+              <option value="KGS">🇰🇬 Kyrgyzstani Som</option>
+              <option value="UZS">🇺🇿 Uzbekistani Sum</option>
+              <option value="BYN">🇧🇾 Belarusian Ruble</option>
+              <option value="TRY">🇹🇷 Turkish Lira</option>
+              <option value="GBP">🇬🇧 Pound Sterling</option>
+              <option value="CNY">🇨🇳 Chinese Yuan</option>
+              <option value="JPY">🇯🇵 Japanese Yen</option>
+              <option value="AED">🇦🇪 UAE Dirham</option>
+            </select>
+          </div>
+        </section>
+
+        <section id="buyStarsPanel" class="buy-panel hidden">
+          <div class="buy-field">
+            <span>Выберите срок</span>
+            <select id="starsPlanSelect" class="currency-select">
+              <option value="1d">1 день — 10 Stars</option>
+              <option value="3d">3 дня — 35 Stars</option>
+              <option value="7d">7 дней — 100 Stars</option>
+              <option value="30d">1 месяц — 200 Stars</option>
+              <option value="lifetime">Навсегда — 350 Stars</option>
+            </select>
+          </div>
+        </section>
+
+        <section id="buyCoinsPanel" class="buy-panel hidden">
+          <div class="buy-field">
+            <span>Выберите срок</span>
+            <select id="coinsPlanSelect" class="currency-select">
+              <option value="1d">1 день — 25 Coins</option>
+              <option value="3d">3 дня — 100 Coins</option>
+              <option value="7d">7 дней — 200 Coins</option>
+              <option value="30d">30 дней — 450 Coins</option>
+              <option value="lifetime">Навсегда — 800 Coins</option>
+            </select>
+          </div>
+        </section>
+      </div>
+
+      <button id="priceBtn" class="price-btn buy-summary" type="button">—</button>
+
+      <div class="pay-note">
+        <span data-i18n="payNote">Перед оплатой укажите свой Telegram или почту, куда будет выслан код доступа. Время ожидания: 5–10 минут.</span>
+      </div>
+
+      <button id="checkoutBtn" class="checkout-btn" data-i18n="buy">Купить</button>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="checkout-modal-backdrop hidden">
+    <div class="checkout-modal glass cut">
+      <button id="closeCheckoutModal" class="modal-close">×</button>
+      <div class="checkout-hero">
+        <div class="checkout-badge">Secure checkout</div>
+        <h2>Ready to buy?</h2>
+        <p>Before payment, enter your Telegram or email where the access code will be sent.</p>
+      </div>
+
+      <div class="checkout-info-grid">
+        <div class="checkout-info-card">
+          <b>Delivery</b>
+          <span>Telegram / email</span>
+        </div>
+        <div class="checkout-info-card">
+          <b>Waiting time</b>
+          <span>5–10 minutes</span>
+        </div>
+        <div class="checkout-info-card">
+          <b>What you get</b>
+          <span>Access key for Falon</span>
+        </div>
+      </div>
+
+      <div class="checkout-note">Double-check the contact you send. The code will be delivered there.</div>
+
+      <div class="checkout-actions">
+        <button id="checkoutCancelBtn" class="checkout-cancel">Not now</button>
+        <button id="checkoutConfirmBtn" class="checkout-confirm">Open checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="freeKeyModal" class="free-key-modal-backdrop hidden">
+    <div class="free-key-modal glass cut">
+      <button id="closeFreeKeyModal" class="modal-close">×</button>
+      <h2 data-i18n="freeKey">Бесплатный ключ</h2>
+      <p class="free-key-lead" data-i18n="freeKeyLead">Добавьте в друзья Xbox создателя лаунчера и получите бесплатный пробный период на 24 часа.</p>
+      <div class="free-key-chip" data-i18n="freeKeyOneTime">Единоразовая акция</div>
+      <p class="free-key-note" data-i18n="freeKeyNote">Акция действует один раз для нового пользователя. После добавления дождитесь подтверждения от создателя.</p>
+      <button id="openCreatorXboxBtn" class="free-key-xbox" data-i18n="openCreatorXbox">Открыть Xbox: GoshGame5697</button>
+      <button id="ackFreeKeyModal" class="free-key-ok" data-i18n="understood">Понятно</button>
+    </div>
+  </div>
+
+  <div id="creatorLiveToast" class="creator-live-toast hidden" role="status" aria-live="polite">
+    <button id="closeCreatorLiveToast" class="creator-live-close" aria-label="Закрыть">×</button>
+    <div class="creator-live-dot"></div>
+    <div class="creator-live-copy">
+      <b data-i18n="creatorLiveTitle">Создатель лаунчера стримит Minecraft</b>
+      <span data-i18n="creatorLiveSub">Присоединяйся!</span>
+    </div>
+    <button id="openCreatorLiveBtn" class="creator-live-open" data-i18n="openTikTok">Открыть TikTok</button>
+  </div>
+
+  <div id="networkDetailsModal" class="network-modal-backdrop hidden">
+    <div class="network-modal glass cut">
+      <button id="closeNetworkDetails" class="modal-close">×</button>
+      <div id="networkDetailsContent" class="network-details-content"></div>
+    </div>
+  </div>
+
+  <div id="networkInstallModal" class="network-modal-backdrop hidden">
+    <div class="network-modal glass cut network-install-modal">
+      <button id="closeNetworkInstall" class="modal-close">×</button>
+      <div class="network-install-head">
+        <h2 data-i18n="networkInstall">Установить</h2>
+        <p>Выбери версию и профиль, потом жми установку.</p>
+      </div>
+
+      <div class="network-install-row">
+        <label>
+          <span>Версия</span>
+          <select id="networkInstallVersion"></select>
+        </label>
+        <label>
+          <span>Профили</span>
+          <div class="network-install-selected" id="networkInstallProfilesSummary">—</div>
+        </label>
+      </div>
+
+      <div class="network-install-profiles-box" id="networkInstallProfilesBox"></div>
+
+      <div class="network-details-actions network-install-actions">
+        <button id="networkInstallCancel">Отмена</button>
+        <button id="networkInstallConfirm" data-i18n="networkInstall">Установить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+name: Safety check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  guard-private-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Block private Falon assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          blocked='(generated_license_keys_|access-keys\.json|access-keys\.vault\.json|Falon-access-keys\.txt|seal_access_keys\.js|\.env|LEGACY_UWP_AUDIT|LEGACY_UWP_BROKEN|LEGACY_CATALOG_CURRENT|\.exe$|\.dll$|\.msi$|\.appx$|\.msix$|\.blockmap$)'
+          if git ls-files | grep -Ei "$blocked"; then
+            echo "Private/build files must not be committed."
+            exit 1
+          fi

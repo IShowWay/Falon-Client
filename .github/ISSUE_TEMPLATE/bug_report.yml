@@ -1,0 +1,32 @@
+name: Bug report
+description: Report a problem with Falon Client
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the issue clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Falon version
+      placeholder: 2.4.0
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Do not paste license keys, tokens, or private paths if they are sensitive.

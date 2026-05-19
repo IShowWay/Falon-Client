@@ -1,0 +1,17 @@
+name: Feature request
+description: Suggest an improvement for Falon Client
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should be improved?
+      description: Explain the feature or UI improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Why is this useful?
+      description: Add examples, screenshots, or expected behavior.

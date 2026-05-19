@@ -1,0 +1,38 @@
+{
+  "name": "falon-manager-v6-lang",
+  "version": "2.4.0",
+  "description": "Falon Minecraft Bedrock manager.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "fs-extra": "^11.2.0",
+    "tiktok-live-connector": "^2.1.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1"
+  },
+  "build": {
+    "appId": "com.falon.manager",
+    "productName": "Falon",
+    "win": {
+      "icon": "src/assets/falon-icon.ico"
+    },
+    "files": [
+      "src/**/*.js",
+      "src/**/*.html",
+      "src/**/*.css",
+      "src/assets/**/*",
+      "src/native/**/*",
+      "Wallapers/**/*",
+      "package.json",
+      "!generated_license_keys_*.txt"
+    ],
+    "asarUnpack": [
+      "src/native/**/*"
+    ]
+  }
+}
