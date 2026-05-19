@@ -1110,21 +1110,23 @@ option,
 }
 
 .home-btn {
-  width: 28px;
-  height: 28px;
+  width: 38px;
+  height: 34px;
   padding: 0;
-  border-radius: 9px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
-  font-size: 15px;
   line-height: 1;
   color: rgba(255, 248, 230, .98);
-  border: 1px solid rgba(255, 213, 128, .42);
-  background: linear-gradient(180deg, rgba(255, 214, 128, .22), rgba(255, 170, 68, .10));
+  border: 1px solid rgba(var(--falon-accent-2-rgb), .42);
+  background:
+    radial-gradient(circle at 32% 18%, rgba(255,255,255,.18), transparent 38%),
+    linear-gradient(145deg, rgba(var(--falon-accent-2-rgb), .24), rgba(var(--falon-accent-rgb), .10)),
+    rgba(255,255,255,.045);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, .05) inset,
-    0 8px 18px rgba(0, 0, 0, .18),
-    0 0 18px rgba(255, 186, 72, .16);
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 10px 22px rgba(0,0,0,.22),
+    0 0 18px rgba(var(--falon-accent-rgb), .16);
   transition:
     transform .22s var(--ease-smooth),
     box-shadow .22s var(--ease-smooth),
@@ -1132,14 +1134,54 @@ option,
     background .22s var(--ease-smooth);
 }
 
+.home-btn-icon {
+  width: 17px;
+  height: 17px;
+  display: block;
+  position: relative;
+  transform: translateX(1px);
+}
+
+.home-btn-icon::before,
+.home-btn-icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.home-btn-icon::before {
+  width: 10px;
+  height: 10px;
+  left: 4px;
+  top: 5px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  box-shadow: -1px 1px 0 rgba(0,0,0,.18);
+}
+
+.home-btn-icon::after {
+  width: 12px;
+  height: 2px;
+  left: 5px;
+  top: 8px;
+  border-radius: 99px;
+  background: currentColor;
+  box-shadow: 0 1px 0 rgba(0,0,0,.18);
+}
+
 .home-btn:hover {
   transform: translateY(-1px) scale(1.03);
-  border-color: rgba(255, 225, 154, .78);
-  background: linear-gradient(180deg, rgba(255, 222, 145, .30), rgba(255, 183, 87, .16));
+  border-color: rgba(var(--falon-accent-2-rgb), .78);
+  background:
+    radial-gradient(circle at 32% 18%, rgba(255,255,255,.24), transparent 40%),
+    linear-gradient(145deg, rgba(var(--falon-accent-2-rgb), .34), rgba(var(--falon-accent-rgb), .18)),
+    rgba(255,255,255,.07);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, .08) inset,
-    0 10px 22px rgba(0, 0, 0, .22),
-    0 0 24px rgba(255, 192, 96, .28);
+    inset 0 1px 0 rgba(255,255,255,.16),
+    0 12px 24px rgba(0,0,0,.24),
+    0 0 26px rgba(var(--falon-accent-rgb), .30);
 }
 
 .home-btn.active,
