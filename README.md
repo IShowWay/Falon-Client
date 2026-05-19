@@ -41,10 +41,8 @@ It is built for a smooth, visual workflow: pick a version, install content, mana
 
 ## Screenshots
 
-> Screenshots will be added before the public release.
-
 <p align="center">
-  <img src="src/assets/falon-avatar.png" width="520" alt="Falon preview" />
+  <img src="docs/screenshots/falon-client-preview.jpg" alt="Falon Client preview" />
 </p>
 
 ## Installation
