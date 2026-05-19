@@ -372,11 +372,13 @@
     <div class="free-key-modal glass cut">
       <button id="closeFreeKeyModal" class="modal-close">×</button>
       <h2 data-i18n="freeKey">Free key</h2>
-      <p class="free-key-lead" data-i18n="freeKeyLead">To receive a free 3-day key, star our GitHub repository.</p>
-      <div class="free-key-chip" data-i18n="freeKeyOneTime">Free 3-day access</div>
-      <p class="free-key-note" data-i18n="freeKeyNote">After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.</p>
-      <button id="openCreatorXboxBtn" class="free-key-xbox" data-i18n="openCreatorXbox">Contact support: @molygench</button>
-      <button id="ackFreeKeyModal" class="free-key-ok" data-i18n="understood">Понятно</button>
+      <p class="free-key-lead" data-i18n="freeKeyLead">Generate a free 1-day key once every 3 days.</p>
+      <div class="free-key-chip" data-i18n="freeKeyOneTime">Bound to this computer</div>
+      <p class="free-key-note" data-i18n="freeKeyNote">The cooldown is saved in Windows system storage, so reinstalling the launcher will not reset it.</p>
+      <div id="freeTrialStatus" class="free-trial-status">Checking free key status...</div>
+      <input id="freeTrialKeyOutput" class="free-trial-key hidden" readonly />
+      <button id="generateFreeTrialBtn" class="free-key-xbox" data-i18n="generateFreeTrial">Generate 1-day key</button>
+      <button id="ackFreeKeyModal" class="free-key-ok" data-i18n="understood">Got it</button>
     </div>
   </div>
 

@@ -8,10 +8,11 @@ const I18N = {
     exit: "Р’С‹Р№С‚Рё",
     buyKey: "РљСѓРїРёС‚СЊ РєР»СЋС‡",
     freeKey: "Free key",
-    freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
-    freeKeyOneTime: "Free 3-day access",
-    freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
+    freeKeyLead: "Generate a free 1-day key once every 3 days.",
+    freeKeyOneTime: "Bound to this computer",
+    freeKeyNote: "The cooldown is saved in Windows system storage, so reinstalling the launcher will not reset it.",
     openCreatorXbox: "Contact support: @molygench",
+    generateFreeTrial: "Generate 1-day key",
     understood: "РџРѕРЅСЏС‚РЅРѕ",
     creatorLiveTitle: "РЎРѕР·РґР°С‚РµР»СЊ Р»Р°СѓРЅС‡РµСЂР° СЃС‚СЂРёРјРёС‚ Minecraft",
     creatorLiveSub: "РџСЂРёСЃРѕРµРґРёРЅСЏР№СЃСЏ!",
@@ -182,10 +183,11 @@ const I18N = {
     exit: "Exit",
     buyKey: "Buy key",
     freeKey: "Free key",
-    freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
-    freeKeyOneTime: "Free 3-day access",
-    freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
+    freeKeyLead: "Generate a free 1-day key once every 3 days.",
+    freeKeyOneTime: "Bound to this computer",
+    freeKeyNote: "The cooldown is saved in Windows system storage, so reinstalling the launcher will not reset it.",
     openCreatorXbox: "Contact support: @molygench",
+    generateFreeTrial: "Generate 1-day key",
     understood: "Got it",
     creatorLiveTitle: "The launcher creator is streaming Minecraft",
     creatorLiveSub: "Join the stream!",
@@ -356,10 +358,11 @@ const I18N = {
     exit: "РЁС‹Т“Сѓ",
     buyKey: "РљС–Р»С‚ СЃР°С‚С‹Рї Р°Р»Сѓ",
     freeKey: "Free key",
-    freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
-    freeKeyOneTime: "Free 3-day access",
-    freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
+    freeKeyLead: "Generate a free 1-day key once every 3 days.",
+    freeKeyOneTime: "Bound to this computer",
+    freeKeyNote: "The cooldown is saved in Windows system storage, so reinstalling the launcher will not reset it.",
     openCreatorXbox: "Contact support: @molygench",
+    generateFreeTrial: "Generate 1-day key",
     understood: "РўТЇСЃС–РЅРґС–Рј",
     creatorLiveTitle: "Р›Р°СѓРЅС‡РµСЂ Р¶Р°СЃР°СѓС€С‹СЃС‹ Minecraft СЃС‚СЂРёРјС–РЅ Р±Р°СЃС‚Р°РґС‹",
     creatorLiveSub: "ТљРѕСЃС‹Р»С‹ТЈС‹Р·!",
@@ -504,10 +507,11 @@ const I18N = {
     exit: "Р’РёР№С‚Рё",
     buyKey: "РљСѓРїРёС‚Рё РєР»СЋС‡",
     freeKey: "Free key",
-    freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
-    freeKeyOneTime: "Free 3-day access",
-    freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
+    freeKeyLead: "Generate a free 1-day key once every 3 days.",
+    freeKeyOneTime: "Bound to this computer",
+    freeKeyNote: "The cooldown is saved in Windows system storage, so reinstalling the launcher will not reset it.",
     openCreatorXbox: "Contact support: @molygench",
+    generateFreeTrial: "Generate 1-day key",
     understood: "Р—СЂРѕР·СѓРјС–Р»Рѕ",
     creatorLiveTitle: "РўРІРѕСЂРµС†СЊ Р»Р°СѓРЅС‡РµСЂР° СЃС‚СЂРёРјРёС‚СЊ Minecraft",
     creatorLiveSub: "РџСЂРёС”РґРЅСѓР№СЃСЏ!",
@@ -652,10 +656,11 @@ const I18N = {
     exit: "Г‡Д±kД±Еџ",
     buyKey: "Anahtar satД±n al",
     freeKey: "Free key",
-    freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
-    freeKeyOneTime: "Free 3-day access",
-    freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
+    freeKeyLead: "Generate a free 1-day key once every 3 days.",
+    freeKeyOneTime: "Bound to this computer",
+    freeKeyNote: "The cooldown is saved in Windows system storage, so reinstalling the launcher will not reset it.",
     openCreatorXbox: "Contact support: @molygench",
+    generateFreeTrial: "Generate 1-day key",
     understood: "AnladД±m",
     creatorLiveTitle: "BaЕџlatД±cД± oluЕџturucusu Minecraft yayД±nД± yapД±yor",
     creatorLiveSub: "YayД±na katД±l!",
@@ -1315,12 +1320,73 @@ function closeCheckoutModal() {
   $("checkoutModal")?.classList.add("hidden");
 }
 
+function setFreeTrialUi(status) {
+  const statusBox = $("freeTrialStatus");
+  const button = $("generateFreeTrialBtn");
+  if (!statusBox || !button) return;
+
+  if (!status) {
+    statusBox.textContent = "Checking free key status...";
+    button.disabled = true;
+    return;
+  }
+
+  button.disabled = !status.canGenerate;
+  if (status.canGenerate) {
+    statusBox.textContent = "Free 1-day key is available now.";
+    return;
+  }
+
+  statusBox.textContent = `Next free key in ${formatRemainingLicenseTime(Number(status.remainingMs || 0))}.`;
+}
+
+async function refreshFreeTrialStatus() {
+  try {
+    const status = await window.mcApi.freeTrialStatus();
+    setFreeTrialUi(status);
+  } catch {
+    setFreeTrialUi({ canGenerate: false, remainingMs: 0 });
+  }
+}
+
 function openFreeKeyModal() {
   $("freeKeyModal")?.classList.remove("hidden");
+  const output = $("freeTrialKeyOutput");
+  if (output) output.classList.add("hidden");
+  refreshFreeTrialStatus();
 }
 
 function closeFreeKeyModal() {
   $("freeKeyModal")?.classList.add("hidden");
+}
+
+async function generateFreeTrialKey() {
+  const button = $("generateFreeTrialBtn");
+  const output = $("freeTrialKeyOutput");
+  if (button) button.disabled = true;
+
+  try {
+    const result = await window.mcApi.generateFreeTrialKey();
+    if (!result?.ok) {
+      setFreeTrialUi(result);
+      return;
+    }
+
+    if (output) {
+      output.value = result.key || "";
+      output.classList.remove("hidden");
+      output.select();
+    }
+    if ($("accessKey")) $("accessKey").value = result.key || "";
+    try { await navigator.clipboard?.writeText(result.key || ""); } catch {}
+    setFreeTrialUi(result);
+    if ($("freeTrialStatus")) $("freeTrialStatus").textContent = "1-day key generated, copied and activated on this PC.";
+    if (result.license?.valid) openAppWithLicense(result.license);
+  } catch (error) {
+    if ($("freeTrialStatus")) $("freeTrialStatus").textContent = String(error?.message || error || "Free key error");
+  } finally {
+    await refreshFreeTrialStatus();
+  }
 }
 
 function showCreatorLiveToast(payload = {}) {
@@ -2885,7 +2951,8 @@ addEventListener("DOMContentLoaded", async () => {
   $("windowColorGradient").onchange = (e) => setWindowColorGradient(e.target.checked);
   $("windowColorModal").addEventListener("click", (e) => { if (e.target.id === "windowColorModal") closeWindowColorModal(); });
   $("closeFreeKeyModal").onclick = closeFreeKeyModal;
-  $("openCreatorXboxBtn").onclick = openCreatorXboxProfile;
+  if ($("openCreatorXboxBtn")) $("openCreatorXboxBtn").onclick = openCreatorXboxProfile;
+  $("generateFreeTrialBtn").onclick = generateFreeTrialKey;
   $("ackFreeKeyModal").onclick = closeFreeKeyModal;
   $("freeKeyModal").addEventListener("click", (e) => { if (e.target.id === "freeKeyModal") closeFreeKeyModal(); });
   $("closeCreatorLiveToast").onclick = closeCreatorLiveToast;

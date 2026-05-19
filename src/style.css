@@ -4532,3 +4532,35 @@ body.window-gradient-off .content::before {
   pointer-events: none;
   transform: translateY(8px) scale(.988);
 }
+
+/* Free trial generator */
+.free-trial-status {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(var(--falon-accent-2-rgb), .28);
+  background: rgba(0, 0, 0, .22);
+  color: rgba(255,255,255,.86);
+  font-weight: 800;
+  border-radius: var(--falon-card-radius);
+}
+
+.free-trial-key {
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 13px 14px;
+  border: 1px solid rgba(var(--falon-accent-2-rgb), .44);
+  background: rgba(0,0,0,.34);
+  color: #fff2c7;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .6px;
+  text-align: center;
+  border-radius: var(--falon-control-radius);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 18px rgba(var(--falon-accent-rgb), .12);
+}
+
+.free-key-xbox:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  filter: grayscale(.25);
+}

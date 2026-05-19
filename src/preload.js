@@ -7,6 +7,8 @@ contextBridge.exposeInMainWorld("mcApi", {
   openCreatorXboxProfile: () => ipcRenderer.invoke("open-creator-xbox-profile"),
   activateLicense: (key) => ipcRenderer.invoke("license-activate", key),
   licenseStatus: () => ipcRenderer.invoke("license-status"),
+  freeTrialStatus: () => ipcRenderer.invoke("free-trial-status"),
+  generateFreeTrialKey: () => ipcRenderer.invoke("free-trial-generate"),
   pickFile: () => ipcRenderer.invoke("pick-file"),
   pickWallpaper: () => ipcRenderer.invoke("pick-wallpaper"),
   getDefaultWallpaper: () => ipcRenderer.invoke("get-default-wallpaper"),

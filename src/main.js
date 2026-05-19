@@ -187,6 +187,9 @@ let latestStartupValidationProgress = {
 const SPLASH_MIN_DURATION = 10000;
 const ACCESS_KEYS_FILE = path.join(__dirname, "assets", "access-keys.json");
 const ACCESS_KEYS_VAULT_FILE = path.join(__dirname, "assets", "access-keys.vault.json");
+const FREE_TRIAL_DURATION_MS = 24 * 60 * 60 * 1000;
+const FREE_TRIAL_COOLDOWN_MS = 3 * 24 * 60 * 60 * 1000;
+const FREE_TRIAL_SIGNING_SALT = "falon-free-trial-v1-local-device-lock";
 
 function getLicenseStateFile() {
   return path.join(app.getPath("userData"), "license-state.json");
@@ -207,6 +210,18 @@ function getLicenseHistoryFile() {
 
 function getLicenseBackupHistoryFile() {
   return path.join(getLicenseBackupDir(), "license-history.json");
+}
+
+function getProgramDataDir() {
+  return process.env.PROGRAMDATA || path.join(process.env.SYSTEMDRIVE || "C:\\", "ProgramData");
+}
+
+function getFreeTrialMarkerFiles() {
+  return [
+    path.join(getProgramDataDir(), "Falon", "license", "free-trial-device.json"),
+    path.join(getLicenseBackupDir(), "free-trial-device.json"),
+    path.join(app.getPath("userData"), "free-trial-device.json")
+  ];
 }
 
 function normalizeAccessKey(value) {
@@ -357,6 +372,120 @@ function getDeviceHash() {
 
   cachedDeviceHash = crypto.createHash("sha256").update(pieces.join("|"), "utf8").digest("hex");
   return cachedDeviceHash;
+}
+
+function signFreeTrialMarker(marker) {
+  const payload = [
+    marker.version || 1,
+    marker.deviceHash || "",
+    marker.keyHash || "",
+    Number(marker.issuedAt || 0),
+    Number(marker.expiresAt || 0),
+    Number(marker.nextAvailableAt || 0)
+  ].join("|");
+  return crypto.createHmac("sha256", FREE_TRIAL_SIGNING_SALT).update(payload, "utf8").digest("hex");
+}
+
+function isValidFreeTrialMarker(marker) {
+  if (!marker || typeof marker !== "object") return false;
+  if (marker.deviceHash !== getDeviceHash()) return false;
+  if (!marker.keyHash || !Number(marker.issuedAt || 0) || !Number(marker.nextAvailableAt || 0)) return false;
+  return marker.signature === signFreeTrialMarker(marker);
+}
+
+function readFreeTrialMarkers() {
+  return getFreeTrialMarkerFiles()
+    .map(file => readJsonSafe(file))
+    .filter(isValidFreeTrialMarker)
+    .sort((a, b) => Number(b.issuedAt || 0) - Number(a.issuedAt || 0));
+}
+
+function readFreeTrialMarker() {
+  return readFreeTrialMarkers()[0] || null;
+}
+
+function writeFreeTrialMarker(marker) {
+  const signed = { ...marker, signature: signFreeTrialMarker(marker) };
+  let written = 0;
+  for (const file of getFreeTrialMarkerFiles()) {
+    try {
+      writeJsonPretty(file, signed);
+      written += 1;
+    } catch {}
+  }
+  if (!written) throw new Error("Cannot save free trial device marker");
+  return signed;
+}
+
+function makeFreeTrialKey() {
+  const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  const bytes = crypto.randomBytes(20);
+  let text = "FALON-FREE-";
+  for (let i = 0; i < 20; i += 1) {
+    if (i && i % 5 === 0) text += "-";
+    text += alphabet[bytes[i] % alphabet.length];
+  }
+  return text;
+}
+
+function serializeFreeTrialStatus(marker = readFreeTrialMarker(), now = Date.now()) {
+  if (!marker) {
+    return { canGenerate: true, remainingMs: 0, nextAvailableAt: null, active: false };
+  }
+  const nextAvailableAt = Number(marker.nextAvailableAt || 0);
+  const expiresAt = Number(marker.expiresAt || 0);
+  return {
+    canGenerate: now >= nextAvailableAt,
+    remainingMs: Math.max(0, nextAvailableAt - now),
+    nextAvailableAt,
+    active: expiresAt > now,
+    expiresAt,
+    issuedAt: Number(marker.issuedAt || 0)
+  };
+}
+
+function buildFreeTrialState(keyHash, now = Date.now()) {
+  return {
+    keyHash,
+    type: "temporary",
+    durationDays: 1,
+    activatedAt: now,
+    expiresAt: now + FREE_TRIAL_DURATION_MS,
+    lastValidatedAt: now,
+    deviceHash: getDeviceHash(),
+    deviceBoundAt: now,
+    source: "free-trial"
+  };
+}
+
+function getFreeTrialStatus() {
+  return serializeFreeTrialStatus();
+}
+
+function generateFreeTrialKey() {
+  const now = Date.now();
+  const previous = readFreeTrialMarker();
+  const previousStatus = serializeFreeTrialStatus(previous, now);
+  if (!previousStatus.canGenerate) {
+    return { ok: false, reason: "cooldown", ...previousStatus };
+  }
+
+  const key = makeFreeTrialKey();
+  const keyHash = accessKeyHash(key);
+  const state = buildFreeTrialState(keyHash, now);
+  const marker = writeFreeTrialMarker({
+    version: 1,
+    deviceHash: getDeviceHash(),
+    keyHash,
+    issuedAt: now,
+    expiresAt: state.expiresAt,
+    nextAvailableAt: now + FREE_TRIAL_COOLDOWN_MS,
+    protectedKey: dpapiProtectText(key)
+  });
+
+  writeLicenseState(state);
+  persistLicenseRecord(state);
+  return { ok: true, key, license: serializeLicenseState(state, now), ...serializeFreeTrialStatus(marker, now) };
 }
 
 function chooseNewestState(states) {
@@ -562,6 +691,17 @@ function activateAccessKey(rawKey) {
   }
 
   const hash = accessKeyHash(normalized);
+  const freeTrialMarker = readFreeTrialMarker();
+  if (freeTrialMarker?.keyHash === hash) {
+    const now = Date.now();
+    const state = buildFreeTrialState(hash, Number(freeTrialMarker.issuedAt || now));
+    state.expiresAt = Number(freeTrialMarker.expiresAt || state.expiresAt);
+    state.lastValidatedAt = now;
+    writeLicenseState(state);
+    persistLicenseRecord(state);
+    return serializeLicenseState(state, now);
+  }
+
   const keyDef = loadAccessKeyManifest().find(item => item && item.hash === hash);
   if (!keyDef) {
     return { valid: false, reason: "invalid" };
@@ -2093,6 +2233,14 @@ ipcMain.handle("license-activate", async (_, key) => {
 
 ipcMain.handle("license-status", async () => {
   return getCurrentLicenseStatus();
+});
+
+ipcMain.handle("free-trial-status", async () => {
+  return getFreeTrialStatus();
+});
+
+ipcMain.handle("free-trial-generate", async () => {
+  return generateFreeTrialKey();
 });
 
 ipcMain.handle("get-splash-appearance", async () => {
