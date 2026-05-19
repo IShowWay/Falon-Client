@@ -1131,8 +1131,8 @@ function log(message) {
 }
 
 function fmtSize(bytes) {
-  if (!bytes) return "0 Р‘";
-  const units = ["Р‘", "РљР‘", "РњР‘", "Р“Р‘"];
+  if (!bytes) return "0 B";
+  const units = ["B", "KB", "MB", "GB"];
   let n = bytes;
   let i = 0;
   while (n >= 1024 && i < units.length - 1) {
@@ -1455,7 +1455,7 @@ function formatRemainingLicenseTime(ms) {
   const hours = Math.floor((totalSeconds % 86400) / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
-  if (days > 0) return `${days}Рґ ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  if (days > 0) return `${days}d ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
@@ -1733,7 +1733,7 @@ function renderNetworkInstallVersions() {
 
   const catalogItems = flattenGameCatalog();
   const seen = new Set();
-  const options = [{ value: "auto", label: "РђРІС‚Рѕ" }];
+  const options = [{ value: "auto", label: "Auto" }];
 
   for (const item of catalogItems) {
     const version = String(item.version || item.short || "").trim();
@@ -1741,7 +1741,7 @@ function renderNetworkInstallVersions() {
     const key = `${item.bucket}|${version}`.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    options.push({ value: `${item.bucket}:${version}`, label: `${version} В· ${gameTypeLabel(item.bucket)}` });
+    options.push({ value: `${item.bucket}:${version}`, label: `${version} · ${gameTypeLabel(item.bucket)}` });
     if (options.length >= 16) break;
   }
 
@@ -1828,7 +1828,7 @@ async function confirmNetworkInstallModal() {
   }
 
   closeNetworkInstallModal();
-  log(`РЎРµС‚СЊ: ${project.name} в†’ ${version}`);
+  log(`Сеть: ${project.name} → ${version}`);
   await installNetworkProject(project, { targetVersion: version, profileIds });
 }
 
@@ -1870,7 +1870,7 @@ function updateNetworkSummary() {
     : state.network.hasMore
       ? t("networkScrollMore")
       : t("networkAllLoaded");
-  setNetworkSummary(`${t("networkShowing")} ${fmtCompactCount(shown)} / ${fmtCompactCount(total)} В· ${suffix}`);
+  setNetworkSummary(`${t("networkShowing")} ${fmtCompactCount(shown)} / ${fmtCompactCount(total)} · ${suffix}`);
 }
 
 function classOrderScore(item) {
@@ -1929,7 +1929,7 @@ function createNetworkCard(project) {
     ? `<img class="network-thumb" src="${escapeHtml(thumb)}" alt="" loading="lazy" />`
     : `<div class="network-thumb network-thumb-fallback">CF</div>`;
   const category = project.category ? `<span class="badge">${escapeHtml(project.category)}</span>` : "";
-  const summary = project.summary ? escapeHtml(project.summary) : "вЂ”";
+  const summary = project.summary ? escapeHtml(project.summary) : "—";
 
   card.innerHTML = `
     <div class="network-thumb-wrap">${logo}</div>
@@ -1939,7 +1939,7 @@ function createNetworkCard(project) {
         ${category}
       </div>
       <p>${summary}</p>
-      <div class="network-meta">${escapeHtml(project.author || "CurseForge")} В· ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</div>
+      <div class="network-meta">${escapeHtml(project.author || "CurseForge")} · ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</div>
       <div class="actions network-actions">
         <button class="networkDetailsBtn">${t("networkDetails")}</button>
         <button class="networkInstallBtn" ${canInstall ? "" : "disabled"}>${t("networkInstall")}</button>
@@ -2034,11 +2034,11 @@ function openNetworkDetails(project) {
       ${logo}
       <div>
         <h3>${escapeHtml(project.name || "CurseForge")}</h3>
-        <p>${escapeHtml(project.author || "CurseForge")} В· ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</p>
+        <p>${escapeHtml(project.author || "CurseForge")} · ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</p>
         <span class="badge">${escapeHtml(project.category || "Bedrock")}</span>
       </div>
     </div>
-    <div class="network-details-summary">${escapeHtml(project.summary || "вЂ”")}</div>
+    <div class="network-details-summary">${escapeHtml(project.summary || "—")}</div>
     ${gallery}
     <div class="network-details-actions">
       <button id="networkDetailsInstall" ${canInstall ? "" : "disabled"}>${t("networkInstall")}</button>
@@ -2071,7 +2071,7 @@ async function loadNetworkSettings() {
     const settings = await window.mcApi.curseforgeSettings();
     if (statusEl) {
       statusEl.textContent = settings?.hasApiKey
-        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` В· ${settings.apiKeyMasked}` : ""}`
+        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` · ${settings.apiKeyMasked}` : ""}`
         : t("networkKeyRequired");
       statusEl.classList.toggle("is-ready", Boolean(settings?.hasApiKey));
     }
@@ -2096,7 +2096,7 @@ async function saveNetworkSettings() {
     state.network.hasMore = true;
     if (statusEl) {
       statusEl.textContent = settings?.hasApiKey
-        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` В· ${settings.apiKeyMasked}` : ""}`
+        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` · ${settings.apiKeyMasked}` : ""}`
         : t("networkKeyRequired");
       statusEl.classList.toggle("is-ready", Boolean(settings?.hasApiKey));
     }
@@ -2261,7 +2261,7 @@ async function installNetworkProject(project, options = {}) {
   }
 
   try {
-    if (options.targetVersion) log(`РЎРµС‚СЊ: СѓСЃС‚Р°РЅРѕРІРєР° РїРѕРґ ${options.targetVersion}`);
+    if (options.targetVersion) log(`Сеть: установка под ${options.targetVersion}`);
     log(t("networkDownloading"));
     const results = await window.mcApi.curseforgeInstall({
       root: state.root,
@@ -2324,7 +2324,7 @@ function setSelectedFile(file) {
   state.file = file;
   const name = file.split(/[\\/]/).pop();
   const fileName = $("fileName");
-  if (fileName) fileName.textContent = name || "вЂ”";
+  if (fileName) fileName.textContent = name || "—";
   const drop = $("dropZone");
   if (drop) {
     drop.classList.add("has-file");
@@ -2371,7 +2371,7 @@ async function installSelected(customProfilePath = null) {
       btn.dataset.prevText = btn.textContent || "";
       btn.textContent = t("installing");
     }
-    setInstallStatus(`${t("installing")}вЂ¦`, "is-warn");
+    setInstallStatus(`${t("installing")}…`, "is-warn");
     log(`${t("installing")}: ${file} -> ${profileIds.length} profiles`);
     const results = await window.mcApi.install({
       root: state.root,
@@ -2395,8 +2395,8 @@ async function installSelected(customProfilePath = null) {
       }
     }
 
-    setInstallStatus(`${t("install")} OK вЂ” ${results.length} target(s)`, "is-ok");
-    log(`${t("install")} OK вЂ” ${results.length} target(s)`);
+    setInstallStatus(`${t("install")} OK — ${results.length} target(s)`, "is-ok");
+    log(`${t("install")} OK — ${results.length} target(s)`);
 
     await scan();
     await refreshResources();
@@ -2546,10 +2546,10 @@ function catalogStatusForItem(item) {
     ? state.game.validationArchive.items
     : {};
   const record = cache[key];
-  if (bucket === "legacy" && archive[key]) return { kind: "bad", label: "РЅРµСЂР°Р±РѕС‡Р°СЏ" };
-  if (record?.valid === true) return { kind: "ok", label: "СЂР°Р±РѕС‡Р°СЏ" };
-  if (record?.hardInvalid === true) return { kind: "bad", label: "РЅРµСЂР°Р±РѕС‡Р°СЏ" };
-  return { kind: "warn", label: "РЅРµ РїСЂРѕРІРµСЂРµРЅР°" };
+  if (bucket === "legacy" && archive[key]) return { kind: "bad", label: "Нерабочая" };
+  if (record?.valid === true) return { kind: "ok", label: "Рабочая" };
+  if (record?.hardInvalid === true) return { kind: "bad", label: "Нерабочая" };
+  return { kind: "warn", label: "Не проверена" };
 }
 
 function flattenGameCatalog() {
@@ -2672,7 +2672,7 @@ function renderInstalledGameVersions() {
         </div>
       </div>
       <div class="game-card-actions">
-        <button class="game-launch-btn" ${state.game.launching ? "disabled" : ""}>${state.game.launching && String(state.game.launchingName || "") === String(item.name || item.version || "") ? "Р—Р°РїСѓСЃРєвЂ¦" : t("gameLaunch")}</button>
+        <button class="game-launch-btn" ${state.game.launching ? "disabled" : ""}>${state.game.launching && String(state.game.launchingName || "") === String(item.name || item.version || "") ? "Запуск…" : t("gameLaunch")}</button>
         ${item.systemInstalled ? "" : `<button class="game-delete-btn danger" ${state.game.launching ? "disabled" : ""}>${t("gameDelete")}</button>`}
       </div>
     `;
@@ -2742,8 +2742,8 @@ function updateGameProgress(payload = {}) {
   if (bar) bar.style.width = total > 0 ? `${percent}%` : "0%";
   if (text) {
     text.textContent = total > 0
-      ? `${fmtSize(downloaded)} / ${fmtSize(total)} В· ${percent}%`
-      : downloaded > 0 ? `${fmtSize(downloaded)} ${t("gameDownloaded")}` : "вЂ”";
+      ? `${fmtSize(downloaded)} / ${fmtSize(total)} · ${percent}%`
+      : downloaded > 0 ? `${fmtSize(downloaded)} ${t("gameDownloaded")}` : "—";
   }
 }
 
@@ -2772,7 +2772,7 @@ function handleGameCatalogValidationProgress(payload = {}) {
 
   if (stage === "done") {
     state.game.validating = false;
-    setGameStatus(`РџСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№ Р·Р°РІРµСЂС€РµРЅР°${total ? `: ${valid}/${total}` : ""}`);
+    setGameStatus(`Проверка версий завершена${total ? `: ${valid}/${total}` : ""}`);
     renderGameCatalog();
     return;
   }
@@ -2780,7 +2780,7 @@ function handleGameCatalogValidationProgress(payload = {}) {
   if (stage === "fallback") {
     state.game.validating = false;
     const error = payload.error ? `: ${payload.error}` : "";
-    setGameStatus(`Р¤РѕРЅРѕРІР°СЏ РїСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№ РЅРµ Р·Р°РІРµСЂС€РёР»Р°СЃСЊ${error}`);
+    setGameStatus(`Фоновая проверка версий не завершилась${error}`);
     return;
   }
 
@@ -2791,9 +2791,9 @@ function handleGameCatalogValidationProgress(payload = {}) {
 
   state.game.validating = true;
   if (total > 0) {
-    setGameStatus(`Р¤РѕРЅРѕРІР°СЏ РїСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№: ${completed}/${total} вЂў ${percent || 0}% вЂў ok ${valid} вЂў bad ${invalid}`);
+    setGameStatus(`Фоновая проверка версий: ${completed}/${total} • ${percent || 0}% • ok ${valid} • bad ${invalid}`);
   } else {
-    setGameStatus("Р¤РѕРЅРѕРІР°СЏ РїСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№...");
+    setGameStatus("Фоновая проверка версий...");
   }
 }
 
@@ -2831,8 +2831,8 @@ function showGameLaunchOverlay(title, message, tone = "loading", autoHideMs = 0)
   overlay.classList.remove("hidden", "success", "error");
   if (tone === "success") overlay.classList.add("success");
   if (tone === "error") overlay.classList.add("error");
-  if (titleEl) titleEl.textContent = String(title || "Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓвЂ¦");
-  if (messageEl) messageEl.textContent = String(message || "РџРѕРґРіРѕС‚Р°РІР»РёРІР°СЋ Minecraft.");
+  if (titleEl) titleEl.textContent = String(title || "Запускаем игру…");
+  if (messageEl) messageEl.textContent = String(message || "Подготавливаю Minecraft.");
   if (autoHideMs > 0) {
     state.game.launchOverlayTimer = setTimeout(() => {
       overlay.classList.add("hidden");
@@ -2864,8 +2864,8 @@ function handleGameLaunchStatus(payload = {}) {
     state.game.launchingName = "";
     renderInstalledGameVersions();
     showGameLaunchOverlay(
-      title || (stage === "launch-pending" ? "РљРѕРјР°РЅРґР° Р·Р°РїСѓСЃРєР° РїРµСЂРµРґР°РЅР°" : "РРіСЂР° Р·Р°РїСѓС‰РµРЅР° РєРѕСЂСЂРµРєС‚РЅРѕ"),
-      message || (stage === "launch-pending" ? "Windows РїСЂРёРЅСЏР»Р° Р·Р°РїСѓСЃРє Minecraft. Falon Р±РѕР»СЊС€Рµ РЅРµ Р¶РґС‘С‚ Р±РµСЃРєРѕРЅРµС‡РЅРѕ." : "РћРєРЅРѕ Minecraft РІС‹РІРµРґРµРЅРѕ РЅР° СЌРєСЂР°РЅ."),
+      title || (stage === "launch-pending" ? "Команда запуска передана" : "Игра запущена корректно"),
+      message || (stage === "launch-pending" ? "Windows приняла запуск Minecraft. Falon больше не ждёт бесконечно." : "Окно Minecraft выведено на экран."),
       "success",
       stage === "launch-pending" ? 4200 : 2600
     );
@@ -2876,12 +2876,12 @@ function handleGameLaunchStatus(payload = {}) {
     state.game.launching = false;
     state.game.launchingName = "";
     renderInstalledGameVersions();
-    showGameLaunchOverlay(title || "Р—Р°РїСѓСЃРє РЅРµ Р·Р°РІРµСЂС€С‘РЅ", message || "Minecraft РЅРµ РѕС‚РєСЂС‹Р» РѕРєРЅРѕ.", "error", 5200);
+    showGameLaunchOverlay(title || "Запуск не завершён", message || "Minecraft не открыл окно.", "error", 5200);
     return;
   }
 
   if (stage) {
-    showGameLaunchOverlay(title || "Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓвЂ¦", message || "РџРѕРґРіРѕС‚Р°РІР»РёРІР°СЋ Minecraft.");
+    showGameLaunchOverlay(title || "Запускаем игру…", message || "Подготавливаю Minecraft.");
   }
 }
 
@@ -2891,8 +2891,8 @@ async function launchGameVersion(name) {
   state.game.launchingName = String(name || "");
   renderInstalledGameVersions();
   const label = String(name || "Bedrock");
-  setGameStatus(`Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓ: ${label}`);
-  showGameLaunchOverlay("Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓвЂ¦", "РџРѕРґРіРѕС‚Р°РІР»РёРІР°СЋ Minecraft Рё Р¶РґСѓ РѕРєРЅРѕ РёРіСЂС‹.");
+  setGameStatus(`Запускаем игру: ${label}`);
+  showGameLaunchOverlay("Запускаем игру…", "Подготавливаю Minecraft и жду окно игры.");
 
   try {
     const result = await window.mcApi.gameLaunch(name);
@@ -2901,7 +2901,7 @@ async function launchGameVersion(name) {
       state.game.launching = false;
       state.game.launchingName = "";
       renderInstalledGameVersions();
-      showGameLaunchOverlay("РРіСЂР° Р·Р°РїСѓС‰РµРЅР° РєРѕСЂСЂРµРєС‚РЅРѕ", message || "РћРєРЅРѕ Minecraft РІС‹РІРµРґРµРЅРѕ РЅР° СЌРєСЂР°РЅ.", "success", 2600);
+      showGameLaunchOverlay("Игра запущена корректно", message || "Окно Minecraft выведено на экран.", "success", 2600);
     }
     log(`${t("gameLaunch")}: ${name}`);
   } catch (error) {
@@ -2911,7 +2911,7 @@ async function launchGameVersion(name) {
     renderInstalledGameVersions();
     setGameStatus(`${t("gameLaunchError")}: ${message}`);
     log(`${t("gameLaunchError")}: ${message}`);
-    showGameLaunchOverlay("Р—Р°РїСѓСЃРє РЅРµ Р·Р°РІРµСЂС€С‘РЅ", message, "error", 6200);
+    showGameLaunchOverlay("Запуск не завершён", message, "error", 6200);
   }
 }
 
