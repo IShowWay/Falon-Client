@@ -4232,3 +4232,79 @@ body.ui-square .buy-modal .checkout-btn {
   vertical-align: middle !important;
 }
 
+
+/* ---------------------------------------------------------
+   Gold readable dropdowns for every launcher select menu
+   --------------------------------------------------------- */
+select,
+.lang-select,
+.currency-select,
+.app-screen select,
+.login-screen select,
+.game-toolbar select,
+.network-toolbar select,
+.network-install-row select,
+.settings-sheet select {
+  color: #fff2c7 !important;
+  background:
+    linear-gradient(180deg, rgba(92, 62, 18, .96), rgba(28, 18, 8, .96)) !important;
+  border-color: rgba(255, 210, 118, .58) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 244, 196, .16),
+    0 0 0 1px rgba(255, 185, 72, .08),
+    0 8px 22px rgba(0, 0, 0, .22) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .55) !important;
+}
+
+select:hover,
+.lang-select:hover,
+.currency-select:hover,
+.app-screen select:hover,
+.login-screen select:hover {
+  border-color: rgba(255, 226, 151, .86) !important;
+  background:
+    linear-gradient(180deg, rgba(116, 78, 22, .98), rgba(38, 24, 9, .98)) !important;
+}
+
+select:focus,
+.lang-select:focus,
+.currency-select:focus,
+.app-screen select:focus,
+.login-screen select:focus {
+  outline: none !important;
+  border-color: rgba(255, 232, 163, .98) !important;
+  box-shadow:
+    0 0 0 2px rgba(255, 198, 83, .22),
+    0 0 28px rgba(255, 185, 72, .20),
+    inset 0 1px 0 rgba(255, 244, 196, .18) !important;
+}
+
+select option,
+select optgroup,
+.lang-select option,
+.currency-select option,
+.app-screen select option,
+.login-screen select option,
+.game-toolbar select option,
+.network-toolbar select option,
+.network-install-row select option,
+.settings-sheet select option {
+  color: #1b1205 !important;
+  background-color: #f1c56a !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+select option:checked,
+select option:hover,
+.lang-select option:checked,
+.lang-select option:hover,
+.currency-select option:checked,
+.currency-select option:hover,
+.app-screen select option:checked,
+.app-screen select option:hover,
+.login-screen select option:checked,
+.login-screen select option:hover {
+  color: #0f0902 !important;
+  background-color: #ffd978 !important;
+}
