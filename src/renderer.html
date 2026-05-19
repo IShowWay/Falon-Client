@@ -65,6 +65,7 @@
         </select>
         <span id="licenseCountdown" class="license-countdown hidden" aria-live="polite"></span>
         <button id="wallpaperBtnApp" class="icon-btn" data-i18n="wallpaper">Обои</button>
+        <button id="windowColorBtn" class="icon-btn" type="button" data-i18n="windowColor">Window color</button>
         <button id="uiShapeToggleBtn" class="icon-btn" type="button" title="Переключить форму окна">UI: Округл.</button>
         <button id="blurToggleBtn" class="icon-btn blur-toggle-btn" type="button">Блюр: Вкл</button>
         <button id="scanBtn" class="icon-btn" data-i18n="refresh">Обновить</button>
@@ -345,6 +346,24 @@
       <div class="checkout-actions">
         <button id="checkoutCancelBtn" class="checkout-cancel">Not now</button>
         <button id="checkoutConfirmBtn" class="checkout-confirm">Open checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="windowColorModal" class="free-key-modal-backdrop hidden">
+    <div class="free-key-modal window-color-modal glass cut">
+      <button id="closeWindowColorModal" class="modal-close">×</button>
+      <h2 data-i18n="windowColor">Window color</h2>
+      <p class="free-key-lead" data-i18n="windowColorLead">Choose the glow color for launcher windows.</p>
+      <div class="window-color-preview" id="windowColorPreview">Falon</div>
+      <div class="window-color-row">
+        <label><span data-i18n="windowColorPrimary">Primary</span><input id="windowColorPrimary" type="color" value="#d6ab49" /></label>
+        <label><span data-i18n="windowColorSecondary">Secondary</span><input id="windowColorSecondary" type="color" value="#ffd67e" /></label>
+      </div>
+      <label class="window-color-check"><input id="windowColorGradient" type="checkbox" checked /> <span data-i18n="windowColorGradient">Gradient glow</span></label>
+      <div class="checkout-actions">
+        <button id="windowColorReset" class="checkout-cancel" data-i18n="windowColorReset">Reset</button>
+        <button id="windowColorDone" class="checkout-confirm" data-i18n="understood">Got it</button>
       </div>
     </div>
   </div>

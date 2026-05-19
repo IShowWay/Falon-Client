@@ -4308,3 +4308,227 @@ select option:hover,
   color: #0f0902 !important;
   background-color: #ffd978 !important;
 }
+
+/* ---------------------------------------------------------
+   User-selectable window glow color
+   --------------------------------------------------------- */
+:root {
+  --falon-accent: #d6ab49;
+  --falon-accent-2: #ffd67e;
+  --falon-accent-rgb: 214, 171, 73;
+  --falon-accent-2-rgb: 255, 214, 126;
+}
+
+.glass,
+.topbar,
+.content,
+.right-panel,
+.login-card,
+.buy-modal,
+.free-key-modal,
+.network-modal,
+.network-toolbar,
+.network-api,
+.network-targets,
+.network-category-bar,
+.game-toolbar,
+.game-actions,
+.game-progress,
+.game-panel,
+.game-card,
+.game-empty,
+.home-path,
+.drop-zone,
+.hub-btn,
+.item,
+.stat,
+#log,
+.pay-note,
+#resourcesList .item,
+#worldsList .item {
+  border-color: rgba(var(--falon-accent-2-rgb), .24) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 0 1px rgba(var(--falon-accent-rgb), .08),
+    0 14px 36px rgba(var(--falon-accent-rgb), .10) !important;
+}
+
+.cut::before,
+.cut-small::before,
+.login-card::before,
+.buy-modal::before,
+.free-key-modal::before,
+.network-modal::before,
+.topbar::before,
+.content::before {
+  background: linear-gradient(145deg,
+    rgba(255,255,255,.24),
+    rgba(var(--falon-accent-2-rgb), .18),
+    rgba(var(--falon-accent-rgb), .58)) !important;
+}
+
+.orb1 { background: rgba(var(--falon-accent-rgb), .16) !important; }
+.orb2 { background: rgba(var(--falon-accent-2-rgb), .12) !important; }
+
+.app-screen .topbar,
+.app-screen .content,
+.app-screen .right-panel {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 0 0 1px rgba(var(--falon-accent-2-rgb), .12),
+    0 0 24px rgba(var(--falon-accent-rgb), .08) !important;
+}
+
+body::after {
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--falon-accent-2-rgb), .20),
+    inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+
+select,
+.lang-select,
+.currency-select,
+.app-screen select,
+.login-screen select,
+.game-toolbar select,
+.network-toolbar select,
+.network-install-row select,
+.settings-sheet select {
+  background:
+    linear-gradient(180deg, rgba(var(--falon-accent-rgb), .50), rgba(28, 18, 8, .96)) !important;
+  border-color: rgba(var(--falon-accent-2-rgb), .62) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 244, 196, .16),
+    0 0 0 1px rgba(var(--falon-accent-rgb), .10),
+    0 8px 22px rgba(0, 0, 0, .22) !important;
+}
+
+select:hover,
+.lang-select:hover,
+.currency-select:hover,
+.app-screen select:hover,
+.login-screen select:hover {
+  border-color: rgba(var(--falon-accent-2-rgb), .88) !important;
+  background:
+    linear-gradient(180deg, rgba(var(--falon-accent-rgb), .62), rgba(38, 24, 9, .98)) !important;
+}
+
+select:focus,
+.lang-select:focus,
+.currency-select:focus,
+.app-screen select:focus,
+.login-screen select:focus {
+  border-color: rgba(var(--falon-accent-2-rgb), .98) !important;
+  box-shadow:
+    0 0 0 2px rgba(var(--falon-accent-rgb), .24),
+    0 0 28px rgba(var(--falon-accent-rgb), .22),
+    inset 0 1px 0 rgba(255, 244, 196, .18) !important;
+}
+
+select option,
+select optgroup,
+.lang-select option,
+.currency-select option,
+.app-screen select option,
+.login-screen select option,
+.game-toolbar select option,
+.network-toolbar select option,
+.network-install-row select option,
+.settings-sheet select option {
+  background-color: var(--falon-accent-2) !important;
+}
+
+select option:checked,
+select option:hover,
+.lang-select option:checked,
+.lang-select option:hover,
+.currency-select option:checked,
+.currency-select option:hover,
+.app-screen select option:checked,
+.app-screen select option:hover,
+.login-screen select option:checked,
+.login-screen select option:hover {
+  background-color: var(--falon-accent) !important;
+}
+
+.window-color-modal {
+  max-width: 440px;
+}
+
+.window-color-preview {
+  height: 84px;
+  display: grid;
+  place-items: center;
+  margin: 14px 0 16px;
+  border: 1px solid rgba(var(--falon-accent-2-rgb), .42);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(var(--falon-accent-2-rgb), .24), transparent 38%),
+    linear-gradient(135deg, rgba(var(--falon-accent-rgb), .30), rgba(var(--falon-accent-2-rgb), .14)),
+    rgba(5, 8, 12, .64);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 0 26px rgba(var(--falon-accent-rgb), .22);
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: .3px;
+  border-radius: var(--falon-card-radius);
+}
+
+.window-color-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.window-color-row label,
+.window-color-check {
+  display: grid;
+  gap: 8px;
+  color: rgba(255,255,255,.82);
+  font-weight: 800;
+}
+
+.window-color-row input[type="color"] {
+  width: 100%;
+  height: 46px;
+  padding: 4px;
+  border-radius: 14px;
+  border: 1px solid rgba(var(--falon-accent-2-rgb), .34);
+  background: rgba(0,0,0,.22);
+  cursor: pointer;
+}
+
+.window-color-check {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  margin: 12px 0 16px;
+}
+
+.window-color-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--falon-accent);
+}
+
+body.window-gradient-off .cut::before,
+body.window-gradient-off .cut-small::before,
+body.window-gradient-off .login-card::before,
+body.window-gradient-off .buy-modal::before,
+body.window-gradient-off .free-key-modal::before,
+body.window-gradient-off .network-modal::before,
+body.window-gradient-off .topbar::before,
+body.window-gradient-off .content::before {
+  background: linear-gradient(145deg,
+    rgba(255,255,255,.22),
+    rgba(var(--falon-accent-rgb), .20),
+    rgba(var(--falon-accent-rgb), .58)) !important;
+}
+
+#windowColorModal.hidden {
+  display: grid !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px) scale(.988);
+}

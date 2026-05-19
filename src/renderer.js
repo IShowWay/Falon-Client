@@ -1,171 +1,177 @@
-const FALLBACK_ROOT = "";
+﻿const FALLBACK_ROOT = "";
 const I18N = {
   ru: {
-    langName: "Русский",
+    langName: "Р СѓСЃСЃРєРёР№",
     appName: "Falon",
-    accessKey: "Ключ доступа",
-    uploadWallpaper: "Загрузить обои",
-    exit: "Выйти",
-    buyKey: "Купить ключ",
+    accessKey: "РљР»СЋС‡ РґРѕСЃС‚СѓРїР°",
+    uploadWallpaper: "Р—Р°РіСЂСѓР·РёС‚СЊ РѕР±РѕРё",
+    exit: "Р’С‹Р№С‚Рё",
+    buyKey: "РљСѓРїРёС‚СЊ РєР»СЋС‡",
     freeKey: "Free key",
     freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
     freeKeyOneTime: "Free 3-day access",
     freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
     openCreatorXbox: "Contact support: @molygench",
-    understood: "Понятно",
-    creatorLiveTitle: "Создатель лаунчера стримит Minecraft",
-    creatorLiveSub: "Присоединяйся!",
-    openTikTok: "Открыть TikTok",
-    ready: "Готов",
-    wallpaper: "Обои",
-    refresh: "Обновить",
-    settingsTitle: "Настройки",
-    settingsPanelTitle: "Быстрый доступ",
-    language: "Язык",
-    languageSub: "Интерфейс лаунчера",
-    wallpaperSub: "Поменять фон",
-    uiShape: "Форма окна",
-    uiShapeSub: "Округлённая или квадратная",
-    blur: "Прозрачность",
+    understood: "РџРѕРЅСЏС‚РЅРѕ",
+    creatorLiveTitle: "РЎРѕР·РґР°С‚РµР»СЊ Р»Р°СѓРЅС‡РµСЂР° СЃС‚СЂРёРјРёС‚ Minecraft",
+    creatorLiveSub: "РџСЂРёСЃРѕРµРґРёРЅСЏР№СЃСЏ!",
+    openTikTok: "РћС‚РєСЂС‹С‚СЊ TikTok",
+    ready: "Р“РѕС‚РѕРІ",
+    wallpaper: "РћР±РѕРё",
+    windowColor: "Цвет окон",
+    windowColorLead: "Выбери цвет перелива для окон лаунчера.",
+    windowColorPrimary: "Основной",
+    windowColorSecondary: "Второй",
+    windowColorGradient: "Градиент",
+    windowColorReset: "Сброс",
+    refresh: "РћР±РЅРѕРІРёС‚СЊ",
+    settingsTitle: "РќР°СЃС‚СЂРѕР№РєРё",
+    settingsPanelTitle: "Р‘С‹СЃС‚СЂС‹Р№ РґРѕСЃС‚СѓРї",
+    language: "РЇР·С‹Рє",
+    languageSub: "РРЅС‚РµСЂС„РµР№СЃ Р»Р°СѓРЅС‡РµСЂР°",
+    wallpaperSub: "РџРѕРјРµРЅСЏС‚СЊ С„РѕРЅ",
+    uiShape: "Р¤РѕСЂРјР° РѕРєРЅР°",
+    uiShapeSub: "РћРєСЂСѓРіР»С‘РЅРЅР°СЏ РёР»Рё РєРІР°РґСЂР°С‚РЅР°СЏ",
+    blur: "РџСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ",
     blurSub: "Blur / clean glass mode",
-    buySub: "Выбери способ оплаты и срок — всё покажем сразу и без путаницы.",
-    buyFiat: "Обычная валюта",
+    buySub: "Р’С‹Р±РµСЂРё СЃРїРѕСЃРѕР± РѕРїР»Р°С‚С‹ Рё СЃСЂРѕРє вЂ” РІСЃС‘ РїРѕРєР°Р¶РµРј СЃСЂР°Р·Сѓ Рё Р±РµР· РїСѓС‚Р°РЅРёС†С‹.",
+    buyFiat: "РћР±С‹С‡РЅР°СЏ РІР°Р»СЋС‚Р°",
     buyStars: "Telegram Stars",
     buyCoins: "TikTok Coins",
-    refreshSub: "Пересканировать версии",
-    exitSub: "Закрыть сессию",
-    blurOn: "Блюр: Вкл",
-    blurOff: "Блюр: Выкл",
-    upload: "Загрузка",
-    myResources: "Мои ресурсы",
-    worlds: "Миры",
+    refreshSub: "РџРµСЂРµСЃРєР°РЅРёСЂРѕРІР°С‚СЊ РІРµСЂСЃРёРё",
+    exitSub: "Р—Р°РєСЂС‹С‚СЊ СЃРµСЃСЃРёСЋ",
+    blurOn: "Р‘Р»СЋСЂ: Р’РєР»",
+    blurOff: "Р‘Р»СЋСЂ: Р’С‹РєР»",
+    upload: "Р—Р°РіСЂСѓР·РєР°",
+    myResources: "РњРѕРё СЂРµСЃСѓСЂСЃС‹",
+    worlds: "РњРёСЂС‹",
     users: "Users",
-    path: "Путь",
-    uploadSub: "Ресурсы, аддоны и миры.",
-    dropFile: "Перетащи файл",
-    noFile: "Файл не выбран",
-    file: "Файл",
-    profiles: "Профили",
-    all: "Все",
-    clear: "Снять",
-    install: "Установить",
-    resourcesSub: "RP/BP по выбранной версии / User.",
-    worldsSub: "Миры выбранной версии / User.",
-    uploadToUser: "Загрузить в User",
-    status: "Статус",
-    profileCount: "Профилей",
-    key: "Ключ",
-    log: "Лог",
-    chooseCurrency: "Выберите валюту",
-    buy: "Купить",
-    pricePrefix: "Стоимость ключа",
-    payNote: "Перед оплатой укажите свой Telegram или почту, куда будет выслан код доступа. Время ожидания: 5–10 минут.",
-    wrongKey: "Неверный или просроченный ключ",
-    keyExpired: "Срок действия ключа истёк",
-    keyDeviceMismatch: "Ключ уже привязан к другому компьютеру",
-    keyActivationError: "Не удалось проверить ключ",
-    keyTimeLeft: "До деактивации",
-    profilesFound: "Профилей найдено",
-    scanError: "Ошибка сканирования",
-    chooseFileFirst: "Сначала выбери файл",
-    dropUnsupported: "Перетащи .mcpack, .mcaddon, .mcworld или .zip",
-    dropPathError: "Не удалось прочитать путь файла — выбери его кнопкой «Файл»",
-    noUserSelected: "Не выбран ни один User",
-    installing: "Установка...",
-    installedWorld: "Мир",
-    installedTo: "установлен в",
-    oldRemoved: "удалено старых",
-    installedPack: "Пак",
-    installError: "Ошибка установки",
-    userNotSelected: "User не выбран",
-    resourcesNotFound: "Ресурсы не найдены",
-    worldsNotFound: "Миры не найдены",
-    openFolder: "Папка",
-    delete: "Удалить",
-    deleteResourceConfirm: "Удалить ресурс и убрать его из миров?",
-    deleteWorldConfirm: "Удалить мир?",
-    deleted: "Удалено",
-    worldDeleted: "Мир удалён",
-    deleteError: "Ошибка удаления",
-    worldDeleteError: "Ошибка удаления мира",
-    resourcesError: "Ошибка ресурсов",
-    worldsError: "Ошибка миров",
-    wallpaperUpdated: "Обои обновлены",
-    wallpaperError: "Ошибка обоев",
-    videoPlaybackError: "Видео выбрано, но не воспроизвелось. Лучше MP4 или WEBM.",
-    imageLoadError: "Картинка не загрузилась.",
-    iconUpdated: "Иконка обновлена",
-    iconError: "Ошибка иконки",
-    iconLoadError: "Иконка не загрузилась",
-    checkoutConfirm: "Перед оплатой укажите свой Telegram или почту, куда будет выслан код доступа.\n\nВремя ожидания: 5–10 минут.\n\nПерейти к оплате?",
-    network: "Сеть",
-    networkSub: "CurseForge для Bedrock.",
-    networkSearchPlaceholder: "Поиск Bedrock-контента",
-    networkAllTypes: "Все типы",
-    networkSortDownloads: "По загрузкам",
-    networkSortUpdated: "Свежие",
-    networkSortFeatured: "Рекомендуемые",
-    networkSortName: "По названию",
-    networkSearchBtn: "Найти",
-    networkInstallProfiles: "Профили установки",
-    networkIntro: "Поиск аддонов, карт, текстур и скриптов Bedrock.",
-    networkLoading: "Загружаю CurseForge...",
-    networkClassLoadError: "Не удалось загрузить типы CurseForge",
-    networkSearchError: "Ошибка поиска CurseForge",
-    networkNoResults: "Ничего не найдено",
-    networkInstall: "Установить",
-    networkDownload: "Скачать",
-    networkOpen: "На CurseForge",
-    networkInstallUnsupported: "Файл найден, но формат установки не поддержан",
-    networkDownloading: "Скачиваю из CurseForge...",
-    networkInstalling: "Устанавливаю из CurseForge...",
-    networkInstalled: "CurseForge установил",
-    networkDownloaded: "Файл скачан",
-    networkDownloadCancelled: "Скачивание отменено",
-    networkPage: "Страница",
-    networkDownloads: "загрузок",
+    path: "РџСѓС‚СЊ",
+    uploadSub: "Р РµСЃСѓСЂСЃС‹, Р°РґРґРѕРЅС‹ Рё РјРёСЂС‹.",
+    dropFile: "РџРµСЂРµС‚Р°С‰Рё С„Р°Р№Р»",
+    noFile: "Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ",
+    file: "Р¤Р°Р№Р»",
+    profiles: "РџСЂРѕС„РёР»Рё",
+    all: "Р’СЃРµ",
+    clear: "РЎРЅСЏС‚СЊ",
+    install: "РЈСЃС‚Р°РЅРѕРІРёС‚СЊ",
+    resourcesSub: "RP/BP РїРѕ РІС‹Р±СЂР°РЅРЅРѕР№ РІРµСЂСЃРёРё / User.",
+    worldsSub: "РњРёСЂС‹ РІС‹Р±СЂР°РЅРЅРѕР№ РІРµСЂСЃРёРё / User.",
+    uploadToUser: "Р—Р°РіСЂСѓР·РёС‚СЊ РІ User",
+    status: "РЎС‚Р°С‚СѓСЃ",
+    profileCount: "РџСЂРѕС„РёР»РµР№",
+    key: "РљР»СЋС‡",
+    log: "Р›РѕРі",
+    chooseCurrency: "Р’С‹Р±РµСЂРёС‚Рµ РІР°Р»СЋС‚Сѓ",
+    buy: "РљСѓРїРёС‚СЊ",
+    pricePrefix: "РЎС‚РѕРёРјРѕСЃС‚СЊ РєР»СЋС‡Р°",
+    payNote: "РџРµСЂРµРґ РѕРїР»Р°С‚РѕР№ СѓРєР°Р¶РёС‚Рµ СЃРІРѕР№ Telegram РёР»Рё РїРѕС‡С‚Сѓ, РєСѓРґР° Р±СѓРґРµС‚ РІС‹СЃР»Р°РЅ РєРѕРґ РґРѕСЃС‚СѓРїР°. Р’СЂРµРјСЏ РѕР¶РёРґР°РЅРёСЏ: 5вЂ“10 РјРёРЅСѓС‚.",
+    wrongKey: "РќРµРІРµСЂРЅС‹Р№ РёР»Рё РїСЂРѕСЃСЂРѕС‡РµРЅРЅС‹Р№ РєР»СЋС‡",
+    keyExpired: "РЎСЂРѕРє РґРµР№СЃС‚РІРёСЏ РєР»СЋС‡Р° РёСЃС‚С‘Рє",
+    keyDeviceMismatch: "РљР»СЋС‡ СѓР¶Рµ РїСЂРёРІСЏР·Р°РЅ Рє РґСЂСѓРіРѕРјСѓ РєРѕРјРїСЊСЋС‚РµСЂСѓ",
+    keyActivationError: "РќРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕРІРµСЂРёС‚СЊ РєР»СЋС‡",
+    keyTimeLeft: "Р”Рѕ РґРµР°РєС‚РёРІР°С†РёРё",
+    profilesFound: "РџСЂРѕС„РёР»РµР№ РЅР°Р№РґРµРЅРѕ",
+    scanError: "РћС€РёР±РєР° СЃРєР°РЅРёСЂРѕРІР°РЅРёСЏ",
+    chooseFileFirst: "РЎРЅР°С‡Р°Р»Р° РІС‹Р±РµСЂРё С„Р°Р№Р»",
+    dropUnsupported: "РџРµСЂРµС‚Р°С‰Рё .mcpack, .mcaddon, .mcworld РёР»Рё .zip",
+    dropPathError: "РќРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ РїСѓС‚СЊ С„Р°Р№Р»Р° вЂ” РІС‹Р±РµСЂРё РµРіРѕ РєРЅРѕРїРєРѕР№ В«Р¤Р°Р№Р»В»",
+    noUserSelected: "РќРµ РІС‹Р±СЂР°РЅ РЅРё РѕРґРёРЅ User",
+    installing: "РЈСЃС‚Р°РЅРѕРІРєР°...",
+    installedWorld: "РњРёСЂ",
+    installedTo: "СѓСЃС‚Р°РЅРѕРІР»РµРЅ РІ",
+    oldRemoved: "СѓРґР°Р»РµРЅРѕ СЃС‚Р°СЂС‹С…",
+    installedPack: "РџР°Рє",
+    installError: "РћС€РёР±РєР° СѓСЃС‚Р°РЅРѕРІРєРё",
+    userNotSelected: "User РЅРµ РІС‹Р±СЂР°РЅ",
+    resourcesNotFound: "Р РµСЃСѓСЂСЃС‹ РЅРµ РЅР°Р№РґРµРЅС‹",
+    worldsNotFound: "РњРёСЂС‹ РЅРµ РЅР°Р№РґРµРЅС‹",
+    openFolder: "РџР°РїРєР°",
+    delete: "РЈРґР°Р»РёС‚СЊ",
+    deleteResourceConfirm: "РЈРґР°Р»РёС‚СЊ СЂРµСЃСѓСЂСЃ Рё СѓР±СЂР°С‚СЊ РµРіРѕ РёР· РјРёСЂРѕРІ?",
+    deleteWorldConfirm: "РЈРґР°Р»РёС‚СЊ РјРёСЂ?",
+    deleted: "РЈРґР°Р»РµРЅРѕ",
+    worldDeleted: "РњРёСЂ СѓРґР°Р»С‘РЅ",
+    deleteError: "РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ",
+    worldDeleteError: "РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ РјРёСЂР°",
+    resourcesError: "РћС€РёР±РєР° СЂРµСЃСѓСЂСЃРѕРІ",
+    worldsError: "РћС€РёР±РєР° РјРёСЂРѕРІ",
+    wallpaperUpdated: "РћР±РѕРё РѕР±РЅРѕРІР»РµРЅС‹",
+    wallpaperError: "РћС€РёР±РєР° РѕР±РѕРµРІ",
+    videoPlaybackError: "Р’РёРґРµРѕ РІС‹Р±СЂР°РЅРѕ, РЅРѕ РЅРµ РІРѕСЃРїСЂРѕРёР·РІРµР»РѕСЃСЊ. Р›СѓС‡С€Рµ MP4 РёР»Рё WEBM.",
+    imageLoadError: "РљР°СЂС‚РёРЅРєР° РЅРµ Р·Р°РіСЂСѓР·РёР»Р°СЃСЊ.",
+    iconUpdated: "РРєРѕРЅРєР° РѕР±РЅРѕРІР»РµРЅР°",
+    iconError: "РћС€РёР±РєР° РёРєРѕРЅРєРё",
+    iconLoadError: "РРєРѕРЅРєР° РЅРµ Р·Р°РіСЂСѓР·РёР»Р°СЃСЊ",
+    checkoutConfirm: "РџРµСЂРµРґ РѕРїР»Р°С‚РѕР№ СѓРєР°Р¶РёС‚Рµ СЃРІРѕР№ Telegram РёР»Рё РїРѕС‡С‚Сѓ, РєСѓРґР° Р±СѓРґРµС‚ РІС‹СЃР»Р°РЅ РєРѕРґ РґРѕСЃС‚СѓРїР°.\n\nР’СЂРµРјСЏ РѕР¶РёРґР°РЅРёСЏ: 5вЂ“10 РјРёРЅСѓС‚.\n\nРџРµСЂРµР№С‚Рё Рє РѕРїР»Р°С‚Рµ?",
+    network: "РЎРµС‚СЊ",
+    networkSub: "CurseForge РґР»СЏ Bedrock.",
+    networkSearchPlaceholder: "РџРѕРёСЃРє Bedrock-РєРѕРЅС‚РµРЅС‚Р°",
+    networkAllTypes: "Р’СЃРµ С‚РёРїС‹",
+    networkSortDownloads: "РџРѕ Р·Р°РіСЂСѓР·РєР°Рј",
+    networkSortUpdated: "РЎРІРµР¶РёРµ",
+    networkSortFeatured: "Р РµРєРѕРјРµРЅРґСѓРµРјС‹Рµ",
+    networkSortName: "РџРѕ РЅР°Р·РІР°РЅРёСЋ",
+    networkSearchBtn: "РќР°Р№С‚Рё",
+    networkInstallProfiles: "РџСЂРѕС„РёР»Рё СѓСЃС‚Р°РЅРѕРІРєРё",
+    networkIntro: "РџРѕРёСЃРє Р°РґРґРѕРЅРѕРІ, РєР°СЂС‚, С‚РµРєСЃС‚СѓСЂ Рё СЃРєСЂРёРїС‚РѕРІ Bedrock.",
+    networkLoading: "Р—Р°РіСЂСѓР¶Р°СЋ CurseForge...",
+    networkClassLoadError: "РќРµ СѓРґР°Р»РѕСЃСЊ Р·Р°РіСЂСѓР·РёС‚СЊ С‚РёРїС‹ CurseForge",
+    networkSearchError: "РћС€РёР±РєР° РїРѕРёСЃРєР° CurseForge",
+    networkNoResults: "РќРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ",
+    networkInstall: "РЈСЃС‚Р°РЅРѕРІРёС‚СЊ",
+    networkDownload: "РЎРєР°С‡Р°С‚СЊ",
+    networkOpen: "РќР° CurseForge",
+    networkInstallUnsupported: "Р¤Р°Р№Р» РЅР°Р№РґРµРЅ, РЅРѕ С„РѕСЂРјР°С‚ СѓСЃС‚Р°РЅРѕРІРєРё РЅРµ РїРѕРґРґРµСЂР¶Р°РЅ",
+    networkDownloading: "РЎРєР°С‡РёРІР°СЋ РёР· CurseForge...",
+    networkInstalling: "РЈСЃС‚Р°РЅР°РІР»РёРІР°СЋ РёР· CurseForge...",
+    networkInstalled: "CurseForge СѓСЃС‚Р°РЅРѕРІРёР»",
+    networkDownloaded: "Р¤Р°Р№Р» СЃРєР°С‡Р°РЅ",
+    networkDownloadCancelled: "РЎРєР°С‡РёРІР°РЅРёРµ РѕС‚РјРµРЅРµРЅРѕ",
+    networkPage: "РЎС‚СЂР°РЅРёС†Р°",
+    networkDownloads: "Р·Р°РіСЂСѓР·РѕРє",
     networkApiKey: "CurseForge API key",
-    networkApiKeyPlaceholder: "Вставь ключ CurseForge API",
-    networkSaveApiKey: "Сохранить",
-    networkKeyReady: "Ключ сохранён",
-    networkKeyRequired: "Для поиска нужен CurseForge API key — вставь его здесь и сохрани.",
-    networkKeySaveError: "Не удалось сохранить CurseForge API key",
-    networkShowing: "Показано",
-    networkScrollMore: "листай вниз — подгружу ещё 50",
-    networkAllLoaded: "всё загружено",
-    networkLoadingMore: "Загружаю ещё 50 ресурсов...",
-    networkDetails: "Подробнее",
-    networkKeyBundled: "Встроенный ключ найден",
-    game: "Игра",
-    gameSub: "Версии, установка и запуск.",
-    gameSearchPlaceholder: "Поиск версии, например 1.21.120",
-    gameAllTypes: "Все",
+    networkApiKeyPlaceholder: "Р’СЃС‚Р°РІСЊ РєР»СЋС‡ CurseForge API",
+    networkSaveApiKey: "РЎРѕС…СЂР°РЅРёС‚СЊ",
+    networkKeyReady: "РљР»СЋС‡ СЃРѕС…СЂР°РЅС‘РЅ",
+    networkKeyRequired: "Р”Р»СЏ РїРѕРёСЃРєР° РЅСѓР¶РµРЅ CurseForge API key вЂ” РІСЃС‚Р°РІСЊ РµРіРѕ Р·РґРµСЃСЊ Рё СЃРѕС…СЂР°РЅРё.",
+    networkKeySaveError: "РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕС…СЂР°РЅРёС‚СЊ CurseForge API key",
+    networkShowing: "РџРѕРєР°Р·Р°РЅРѕ",
+    networkScrollMore: "Р»РёСЃС‚Р°Р№ РІРЅРёР· вЂ” РїРѕРґРіСЂСѓР¶Сѓ РµС‰С‘ 50",
+    networkAllLoaded: "РІСЃС‘ Р·Р°РіСЂСѓР¶РµРЅРѕ",
+    networkLoadingMore: "Р—Р°РіСЂСѓР¶Р°СЋ РµС‰С‘ 50 СЂРµСЃСѓСЂСЃРѕРІ...",
+    networkDetails: "РџРѕРґСЂРѕР±РЅРµРµ",
+    networkKeyBundled: "Р’СЃС‚СЂРѕРµРЅРЅС‹Р№ РєР»СЋС‡ РЅР°Р№РґРµРЅ",
+    game: "РРіСЂР°",
+    gameSub: "Р’РµСЂСЃРёРё, СѓСЃС‚Р°РЅРѕРІРєР° Рё Р·Р°РїСѓСЃРє.",
+    gameSearchPlaceholder: "РџРѕРёСЃРє РІРµСЂСЃРёРё, РЅР°РїСЂРёРјРµСЂ 1.21.120",
+    gameAllTypes: "Р’СЃРµ",
     gameRelease: "Release",
     gamePreview: "Preview",
     gameLegacy: "Legacy UWP",
-    gameRefresh: "Обновить версии",
-    gameVersionsFolder: "Папка версий",
-    gameInstallersFolder: "Пакеты",
-    gameReady: "Каталог версий ещё не загружен.",
-    gameLoadingCatalog: "Загружаю каталог версий...",
-    gameCatalogError: "Ошибка каталога версий",
-    gameAvailableVersions: "Доступные версии",
-    gameInstalledVersions: "Установленные",
-    gameInstallVersion: "Скачать и установить",
-    gameLaunch: "Запустить",
-    gameDelete: "Удалить",
-    gameDeleteConfirm: "Удалить эту установленную версию из Falon?",
-    gameDeleteDone: "Версия удалена",
-    gameDeleteError: "Ошибка удаления версии",
-    gameVersionSource: "Источник",
-    gameInstallStarted: "Начинаю установку версии",
-    gameInstallDone: "Версия установлена",
-    gameInstallError: "Ошибка установки версии",
-    gameLaunchError: "Ошибка запуска версии",
-    gameNoVersions: "Версии не найдены",
-    gameNoInstalled: "Установленных версий пока нет",
-    gameDownloaded: "скачано",
-    gameInstalling: "Установка...",
+    gameRefresh: "РћР±РЅРѕРІРёС‚СЊ РІРµСЂСЃРёРё",
+    gameVersionsFolder: "РџР°РїРєР° РІРµСЂСЃРёР№",
+    gameInstallersFolder: "РџР°РєРµС‚С‹",
+    gameReady: "РљР°С‚Р°Р»РѕРі РІРµСЂСЃРёР№ РµС‰С‘ РЅРµ Р·Р°РіСЂСѓР¶РµРЅ.",
+    gameLoadingCatalog: "Р—Р°РіСЂСѓР¶Р°СЋ РєР°С‚Р°Р»РѕРі РІРµСЂСЃРёР№...",
+    gameCatalogError: "РћС€РёР±РєР° РєР°С‚Р°Р»РѕРіР° РІРµСЂСЃРёР№",
+    gameAvailableVersions: "Р”РѕСЃС‚СѓРїРЅС‹Рµ РІРµСЂСЃРёРё",
+    gameInstalledVersions: "РЈСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹Рµ",
+    gameInstallVersion: "РЎРєР°С‡Р°С‚СЊ Рё СѓСЃС‚Р°РЅРѕРІРёС‚СЊ",
+    gameLaunch: "Р—Р°РїСѓСЃС‚РёС‚СЊ",
+    gameDelete: "РЈРґР°Р»РёС‚СЊ",
+    gameDeleteConfirm: "РЈРґР°Р»РёС‚СЊ СЌС‚Сѓ СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅСѓСЋ РІРµСЂСЃРёСЋ РёР· Falon?",
+    gameDeleteDone: "Р’РµСЂСЃРёСЏ СѓРґР°Р»РµРЅР°",
+    gameDeleteError: "РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ РІРµСЂСЃРёРё",
+    gameVersionSource: "РСЃС‚РѕС‡РЅРёРє",
+    gameInstallStarted: "РќР°С‡РёРЅР°СЋ СѓСЃС‚Р°РЅРѕРІРєСѓ РІРµСЂСЃРёРё",
+    gameInstallDone: "Р’РµСЂСЃРёСЏ СѓСЃС‚Р°РЅРѕРІР»РµРЅР°",
+    gameInstallError: "РћС€РёР±РєР° СѓСЃС‚Р°РЅРѕРІРєРё РІРµСЂСЃРёРё",
+    gameLaunchError: "РћС€РёР±РєР° Р·Р°РїСѓСЃРєР° РІРµСЂСЃРёРё",
+    gameNoVersions: "Р’РµСЂСЃРёРё РЅРµ РЅР°Р№РґРµРЅС‹",
+    gameNoInstalled: "РЈСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹С… РІРµСЂСЃРёР№ РїРѕРєР° РЅРµС‚",
+    gameDownloaded: "СЃРєР°С‡Р°РЅРѕ",
+    gameInstalling: "РЈСЃС‚Р°РЅРѕРІРєР°...",
     active: "ACTIVE"
   },
   en: {
@@ -186,6 +192,12 @@ const I18N = {
     openTikTok: "Open TikTok",
     ready: "Ready",
     wallpaper: "Wallpaper",
+    windowColor: "Window color",
+    windowColorLead: "Choose the glow color for launcher windows.",
+    windowColorPrimary: "Primary",
+    windowColorSecondary: "Secondary",
+    windowColorGradient: "Gradient glow",
+    windowColorReset: "Reset",
     refresh: "Refresh",
     settingsTitle: "Settings",
     settingsPanelTitle: "Quick access",
@@ -196,7 +208,7 @@ const I18N = {
     uiShapeSub: "Rounded or square",
     blur: "Transparency",
     blurSub: "Blur / clean glass mode",
-    buySub: "Choose a payment method and term — we show everything clearly.",
+    buySub: "Choose a payment method and term вЂ” we show everything clearly.",
     buyFiat: "Regular currency",
     buyStars: "Telegram Stars",
     buyCoins: "TikTok Coins",
@@ -227,7 +239,7 @@ const I18N = {
     chooseCurrency: "Choose currency",
     buy: "Buy",
     pricePrefix: "Key price",
-    payNote: "Before payment, enter your Telegram or email where the access code will be sent. Waiting time: 5–10 minutes.",
+    payNote: "Before payment, enter your Telegram or email where the access code will be sent. Waiting time: 5вЂ“10 minutes.",
     wrongKey: "Invalid or expired key",
     keyExpired: "The access key has expired",
     keyDeviceMismatch: "This key is already bound to another computer",
@@ -237,7 +249,7 @@ const I18N = {
     scanError: "Scan error",
     chooseFileFirst: "Select a file first",
     dropUnsupported: "Drop a .mcpack, .mcaddon, .mcworld or .zip file",
-    dropPathError: "Could not read the file path — use the File button",
+    dropPathError: "Could not read the file path вЂ” use the File button",
     noUserSelected: "No User selected",
     installing: "Installing...",
     installedWorld: "World",
@@ -265,7 +277,7 @@ const I18N = {
     iconUpdated: "Icon updated",
     iconError: "Icon error",
     iconLoadError: "Icon failed to load",
-    checkoutConfirm: "Before payment, enter your Telegram or email where the access code will be sent.\n\nWaiting time: 5–10 minutes.\n\nOpen checkout?",
+    checkoutConfirm: "Before payment, enter your Telegram or email where the access code will be sent.\n\nWaiting time: 5вЂ“10 minutes.\n\nOpen checkout?",
     network: "Network",
     networkSub: "CurseForge for Bedrock.",
     networkSearchPlaceholder: "Search Bedrock content",
@@ -296,10 +308,10 @@ const I18N = {
     networkApiKeyPlaceholder: "Paste CurseForge API key",
     networkSaveApiKey: "Save",
     networkKeyReady: "Key saved",
-    networkKeyRequired: "Search needs a CurseForge API key — paste and save it here.",
+    networkKeyRequired: "Search needs a CurseForge API key вЂ” paste and save it here.",
     networkKeySaveError: "Could not save CurseForge API key",
     networkShowing: "Showing",
-    networkScrollMore: "scroll down — 50 more will load",
+    networkScrollMore: "scroll down вЂ” 50 more will load",
     networkAllLoaded: "all loaded",
     networkLoadingMore: "Loading 50 more resources...",
     networkDetails: "Details",
@@ -337,445 +349,445 @@ const I18N = {
     active: "ACTIVE"
   },
   kk: {
-    langName: "Қазақша",
+    langName: "ТљР°Р·Р°Т›С€Р°",
     appName: "Falon",
-    accessKey: "Қол жеткізу кілті",
-    uploadWallpaper: "Түсқағаз жүктеу",
-    exit: "Шығу",
-    buyKey: "Кілт сатып алу",
+    accessKey: "ТљРѕР» Р¶РµС‚РєС–Р·Сѓ РєС–Р»С‚С–",
+    uploadWallpaper: "РўТЇСЃТ›Р°Т“Р°Р· Р¶ТЇРєС‚РµСѓ",
+    exit: "РЁС‹Т“Сѓ",
+    buyKey: "РљС–Р»С‚ СЃР°С‚С‹Рї Р°Р»Сѓ",
     freeKey: "Free key",
     freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
     freeKeyOneTime: "Free 3-day access",
     freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
     openCreatorXbox: "Contact support: @molygench",
-    understood: "Түсіндім",
-    creatorLiveTitle: "Лаунчер жасаушысы Minecraft стримін бастады",
-    creatorLiveSub: "Қосылыңыз!",
-    openTikTok: "TikTok ашу",
-    ready: "Дайын",
-    wallpaper: "Түсқағаз",
-    refresh: "Жаңарту",
-    blurOn: "Блюр: Қос",
-    blurOff: "Блюр: Сөн",
-    upload: "Жүктеу",
-    myResources: "Менің ресурстарым",
-    worlds: "Әлемдер",
+    understood: "РўТЇСЃС–РЅРґС–Рј",
+    creatorLiveTitle: "Р›Р°СѓРЅС‡РµСЂ Р¶Р°СЃР°СѓС€С‹СЃС‹ Minecraft СЃС‚СЂРёРјС–РЅ Р±Р°СЃС‚Р°РґС‹",
+    creatorLiveSub: "ТљРѕСЃС‹Р»С‹ТЈС‹Р·!",
+    openTikTok: "TikTok Р°С€Сѓ",
+    ready: "Р”Р°Р№С‹РЅ",
+    wallpaper: "РўТЇСЃТ›Р°Т“Р°Р·",
+    refresh: "Р–Р°ТЈР°СЂС‚Сѓ",
+    blurOn: "Р‘Р»СЋСЂ: ТљРѕСЃ",
+    blurOff: "Р‘Р»СЋСЂ: РЎУ©РЅ",
+    upload: "Р–ТЇРєС‚РµСѓ",
+    myResources: "РњРµРЅС–ТЈ СЂРµСЃСѓСЂСЃС‚Р°СЂС‹Рј",
+    worlds: "УР»РµРјРґРµСЂ",
     users: "Users",
-    path: "Жол",
-    uploadSub: "Ресурстар, аддондар және әлемдер.",
-    dropFile: "Файлды осында таста",
-    noFile: "Файл таңдалмаған",
-    file: "Файл",
-    profiles: "Профильдер",
-    all: "Барлығы",
-    clear: "Тазалау",
-    install: "Орнату",
-    resourcesSub: "Таңдалған нұсқа / User үшін RP/BP.",
-    worldsSub: "Таңдалған нұсқа / User әлемдері.",
-    uploadToUser: "User ішіне жүктеу",
-    status: "Күй",
-    profileCount: "Профильдер",
-    key: "Кілт",
-    log: "Журнал",
-    chooseCurrency: "Валютаны таңдаңыз",
-    buy: "Сатып алу",
-    pricePrefix: "Кілт бағасы",
-    payNote: "Төлем алдында access code жіберілетін Telegram немесе email көрсетіңіз. Күту уақыты: 5–10 минут.",
-    wrongKey: "Кілт қате немесе мерзімі өткен",
-    keyExpired: "Кілттің мерзімі аяқталды",
-    keyDeviceMismatch: "Бұл кілт басқа компьютерге байланған",
-    keyActivationError: "Кілтті тексеру мүмкін болмады",
-    keyTimeLeft: "Өшіруге дейін",
-    profilesFound: "Профильдер табылды",
-    scanError: "Сканерлеу қатесі",
-    chooseFileFirst: "Алдымен файл таңдаңыз",
-    dropUnsupported: ".mcpack, .mcaddon, .mcworld немесе .zip файлын тастаңыз",
-    dropPathError: "Файл жолын оқу мүмкін болмады — «Файл» батырмасын қолданыңыз",
-    noUserSelected: "User таңдалмаған",
-    installing: "Орнатылуда...",
-    installedWorld: "Әлем",
-    installedTo: "орнатылды",
-    oldRemoved: "ескісі жойылды",
-    installedPack: "Пак",
-    installError: "Орнату қатесі",
-    userNotSelected: "User таңдалмаған",
-    resourcesNotFound: "Ресурстар табылмады",
-    worldsNotFound: "Әлемдер табылмады",
-    openFolder: "Папка",
-    delete: "Жою",
-    deleteResourceConfirm: "Ресурсты жойып, оны әлемдерден алып тастау керек пе?",
-    deleteWorldConfirm: "Бұл әлемді жою керек пе?",
-    deleted: "Жойылды",
-    worldDeleted: "Әлем жойылды",
-    deleteError: "Жою қатесі",
-    worldDeleteError: "Әлемді жою қатесі",
-    resourcesError: "Ресурстар қатесі",
-    worldsError: "Әлемдер қатесі",
-    wallpaperUpdated: "Түсқағаз жаңартылды",
-    wallpaperError: "Түсқағаз қатесі",
-    videoPlaybackError: "Видео таңдалды, бірақ ойнатылмады. MP4 немесе WEBM жақсы.",
-    imageLoadError: "Сурет жүктелмеді.",
-    iconUpdated: "Иконка жаңартылды",
-    iconError: "Иконка қатесі",
-    iconLoadError: "Иконка жүктелмеді",
-    checkoutConfirm: "Төлем алдында access code жіберілетін Telegram немесе email көрсетіңіз.\n\nКүту уақыты: 5–10 минут.\n\nТөлем бетіне өту керек пе?",
-    network: "Желі",
-    networkSub: "Bedrock үшін CurseForge.",
-    networkSearchPlaceholder: "Bedrock контентін іздеу",
-    networkAllTypes: "Барлық түрі",
-    networkSortDownloads: "Жүктеулер бойынша",
-    networkSortUpdated: "Жаңалары",
-    networkSortFeatured: "Ұсынылған",
-    networkSortName: "Атауы бойынша",
-    networkSearchBtn: "Іздеу",
-    networkInstallProfiles: "Орнату профильдері",
-    networkIntro: "Bedrock аддондары, карталары, текстуралары мен скрипттерін іздеу.",
-    networkLoading: "CurseForge жүктелуде...",
-    networkClassLoadError: "CurseForge түрлерін жүктеу мүмкін болмады",
-    networkSearchError: "CurseForge іздеу қатесі",
-    networkNoResults: "Ештеңе табылмады",
-    networkInstall: "Орнату",
-    networkDownload: "Жүктеу",
+    path: "Р–РѕР»",
+    uploadSub: "Р РµСЃСѓСЂСЃС‚Р°СЂ, Р°РґРґРѕРЅРґР°СЂ Р¶У™РЅРµ У™Р»РµРјРґРµСЂ.",
+    dropFile: "Р¤Р°Р№Р»РґС‹ РѕСЃС‹РЅРґР° С‚Р°СЃС‚Р°",
+    noFile: "Р¤Р°Р№Р» С‚Р°ТЈРґР°Р»РјР°Т“Р°РЅ",
+    file: "Р¤Р°Р№Р»",
+    profiles: "РџСЂРѕС„РёР»СЊРґРµСЂ",
+    all: "Р‘Р°СЂР»С‹Т“С‹",
+    clear: "РўР°Р·Р°Р»Р°Сѓ",
+    install: "РћСЂРЅР°С‚Сѓ",
+    resourcesSub: "РўР°ТЈРґР°Р»Т“Р°РЅ РЅТ±СЃТ›Р° / User ТЇС€С–РЅ RP/BP.",
+    worldsSub: "РўР°ТЈРґР°Р»Т“Р°РЅ РЅТ±СЃТ›Р° / User У™Р»РµРјРґРµСЂС–.",
+    uploadToUser: "User С–С€С–РЅРµ Р¶ТЇРєС‚РµСѓ",
+    status: "РљТЇР№",
+    profileCount: "РџСЂРѕС„РёР»СЊРґРµСЂ",
+    key: "РљС–Р»С‚",
+    log: "Р–СѓСЂРЅР°Р»",
+    chooseCurrency: "Р’Р°Р»СЋС‚Р°РЅС‹ С‚Р°ТЈРґР°ТЈС‹Р·",
+    buy: "РЎР°С‚С‹Рї Р°Р»Сѓ",
+    pricePrefix: "РљС–Р»С‚ Р±Р°Т“Р°СЃС‹",
+    payNote: "РўУ©Р»РµРј Р°Р»РґС‹РЅРґР° access code Р¶С–Р±РµСЂС–Р»РµС‚С–РЅ Telegram РЅРµРјРµСЃРµ email РєУ©СЂСЃРµС‚С–ТЈС–Р·. РљТЇС‚Сѓ СѓР°Т›С‹С‚С‹: 5вЂ“10 РјРёРЅСѓС‚.",
+    wrongKey: "РљС–Р»С‚ Т›Р°С‚Рµ РЅРµРјРµСЃРµ РјРµСЂР·С–РјС– У©С‚РєРµРЅ",
+    keyExpired: "РљС–Р»С‚С‚С–ТЈ РјРµСЂР·С–РјС– Р°СЏТ›С‚Р°Р»РґС‹",
+    keyDeviceMismatch: "Р‘Т±Р» РєС–Р»С‚ Р±Р°СЃТ›Р° РєРѕРјРїСЊСЋС‚РµСЂРіРµ Р±Р°Р№Р»Р°РЅТ“Р°РЅ",
+    keyActivationError: "РљС–Р»С‚С‚С– С‚РµРєСЃРµСЂСѓ РјТЇРјРєС–РЅ Р±РѕР»РјР°РґС‹",
+    keyTimeLeft: "УЁС€С–СЂСѓРіРµ РґРµР№С–РЅ",
+    profilesFound: "РџСЂРѕС„РёР»СЊРґРµСЂ С‚Р°Р±С‹Р»РґС‹",
+    scanError: "РЎРєР°РЅРµСЂР»РµСѓ Т›Р°С‚РµСЃС–",
+    chooseFileFirst: "РђР»РґС‹РјРµРЅ С„Р°Р№Р» С‚Р°ТЈРґР°ТЈС‹Р·",
+    dropUnsupported: ".mcpack, .mcaddon, .mcworld РЅРµРјРµСЃРµ .zip С„Р°Р№Р»С‹РЅ С‚Р°СЃС‚Р°ТЈС‹Р·",
+    dropPathError: "Р¤Р°Р№Р» Р¶РѕР»С‹РЅ РѕТ›Сѓ РјТЇРјРєС–РЅ Р±РѕР»РјР°РґС‹ вЂ” В«Р¤Р°Р№Р»В» Р±Р°С‚С‹СЂРјР°СЃС‹РЅ Т›РѕР»РґР°РЅС‹ТЈС‹Р·",
+    noUserSelected: "User С‚Р°ТЈРґР°Р»РјР°Т“Р°РЅ",
+    installing: "РћСЂРЅР°С‚С‹Р»СѓРґР°...",
+    installedWorld: "УР»РµРј",
+    installedTo: "РѕСЂРЅР°С‚С‹Р»РґС‹",
+    oldRemoved: "РµСЃРєС–СЃС– Р¶РѕР№С‹Р»РґС‹",
+    installedPack: "РџР°Рє",
+    installError: "РћСЂРЅР°С‚Сѓ Т›Р°С‚РµСЃС–",
+    userNotSelected: "User С‚Р°ТЈРґР°Р»РјР°Т“Р°РЅ",
+    resourcesNotFound: "Р РµСЃСѓСЂСЃС‚Р°СЂ С‚Р°Р±С‹Р»РјР°РґС‹",
+    worldsNotFound: "УР»РµРјРґРµСЂ С‚Р°Р±С‹Р»РјР°РґС‹",
+    openFolder: "РџР°РїРєР°",
+    delete: "Р–РѕСЋ",
+    deleteResourceConfirm: "Р РµСЃСѓСЂСЃС‚С‹ Р¶РѕР№С‹Рї, РѕРЅС‹ У™Р»РµРјРґРµСЂРґРµРЅ Р°Р»С‹Рї С‚Р°СЃС‚Р°Сѓ РєРµСЂРµРє РїРµ?",
+    deleteWorldConfirm: "Р‘Т±Р» У™Р»РµРјРґС– Р¶РѕСЋ РєРµСЂРµРє РїРµ?",
+    deleted: "Р–РѕР№С‹Р»РґС‹",
+    worldDeleted: "УР»РµРј Р¶РѕР№С‹Р»РґС‹",
+    deleteError: "Р–РѕСЋ Т›Р°С‚РµСЃС–",
+    worldDeleteError: "УР»РµРјРґС– Р¶РѕСЋ Т›Р°С‚РµСЃС–",
+    resourcesError: "Р РµСЃСѓСЂСЃС‚Р°СЂ Т›Р°С‚РµСЃС–",
+    worldsError: "УР»РµРјРґРµСЂ Т›Р°С‚РµСЃС–",
+    wallpaperUpdated: "РўТЇСЃТ›Р°Т“Р°Р· Р¶Р°ТЈР°СЂС‚С‹Р»РґС‹",
+    wallpaperError: "РўТЇСЃТ›Р°Т“Р°Р· Т›Р°С‚РµСЃС–",
+    videoPlaybackError: "Р’РёРґРµРѕ С‚Р°ТЈРґР°Р»РґС‹, Р±С–СЂР°Т› РѕР№РЅР°С‚С‹Р»РјР°РґС‹. MP4 РЅРµРјРµСЃРµ WEBM Р¶Р°Т›СЃС‹.",
+    imageLoadError: "РЎСѓСЂРµС‚ Р¶ТЇРєС‚РµР»РјРµРґС–.",
+    iconUpdated: "РРєРѕРЅРєР° Р¶Р°ТЈР°СЂС‚С‹Р»РґС‹",
+    iconError: "РРєРѕРЅРєР° Т›Р°С‚РµСЃС–",
+    iconLoadError: "РРєРѕРЅРєР° Р¶ТЇРєС‚РµР»РјРµРґС–",
+    checkoutConfirm: "РўУ©Р»РµРј Р°Р»РґС‹РЅРґР° access code Р¶С–Р±РµСЂС–Р»РµС‚С–РЅ Telegram РЅРµРјРµСЃРµ email РєУ©СЂСЃРµС‚С–ТЈС–Р·.\n\nРљТЇС‚Сѓ СѓР°Т›С‹С‚С‹: 5вЂ“10 РјРёРЅСѓС‚.\n\nРўУ©Р»РµРј Р±РµС‚С–РЅРµ У©С‚Сѓ РєРµСЂРµРє РїРµ?",
+    network: "Р–РµР»С–",
+    networkSub: "Bedrock ТЇС€С–РЅ CurseForge.",
+    networkSearchPlaceholder: "Bedrock РєРѕРЅС‚РµРЅС‚С–РЅ С–Р·РґРµСѓ",
+    networkAllTypes: "Р‘Р°СЂР»С‹Т› С‚ТЇСЂС–",
+    networkSortDownloads: "Р–ТЇРєС‚РµСѓР»РµСЂ Р±РѕР№С‹РЅС€Р°",
+    networkSortUpdated: "Р–Р°ТЈР°Р»Р°СЂС‹",
+    networkSortFeatured: "Т°СЃС‹РЅС‹Р»Т“Р°РЅ",
+    networkSortName: "РђС‚Р°СѓС‹ Р±РѕР№С‹РЅС€Р°",
+    networkSearchBtn: "Р†Р·РґРµСѓ",
+    networkInstallProfiles: "РћСЂРЅР°С‚Сѓ РїСЂРѕС„РёР»СЊРґРµСЂС–",
+    networkIntro: "Bedrock Р°РґРґРѕРЅРґР°СЂС‹, РєР°СЂС‚Р°Р»Р°СЂС‹, С‚РµРєСЃС‚СѓСЂР°Р»Р°СЂС‹ РјРµРЅ СЃРєСЂРёРїС‚С‚РµСЂС–РЅ С–Р·РґРµСѓ.",
+    networkLoading: "CurseForge Р¶ТЇРєС‚РµР»СѓРґРµ...",
+    networkClassLoadError: "CurseForge С‚ТЇСЂР»РµСЂС–РЅ Р¶ТЇРєС‚РµСѓ РјТЇРјРєС–РЅ Р±РѕР»РјР°РґС‹",
+    networkSearchError: "CurseForge С–Р·РґРµСѓ Т›Р°С‚РµСЃС–",
+    networkNoResults: "Р•С€С‚РµТЈРµ С‚Р°Р±С‹Р»РјР°РґС‹",
+    networkInstall: "РћСЂРЅР°С‚Сѓ",
+    networkDownload: "Р–ТЇРєС‚РµСѓ",
     networkOpen: "CurseForge",
-    networkInstallUnsupported: "Файл бар, бірақ орнату форматы қолдау таппады",
-    networkDownloading: "CurseForge-тан жүктелуде...",
-    networkInstalling: "CurseForge-тан орнатылуда...",
-    networkInstalled: "CurseForge орнатты",
-    networkDownloaded: "Файл жүктелді",
-    networkDownloadCancelled: "Жүктеу тоқтатылды",
-    networkPage: "Бет",
-    networkDownloads: "жүктеу",
+    networkInstallUnsupported: "Р¤Р°Р№Р» Р±Р°СЂ, Р±С–СЂР°Т› РѕСЂРЅР°С‚Сѓ С„РѕСЂРјР°С‚С‹ Т›РѕР»РґР°Сѓ С‚Р°РїРїР°РґС‹",
+    networkDownloading: "CurseForge-С‚Р°РЅ Р¶ТЇРєС‚РµР»СѓРґРµ...",
+    networkInstalling: "CurseForge-С‚Р°РЅ РѕСЂРЅР°С‚С‹Р»СѓРґР°...",
+    networkInstalled: "CurseForge РѕСЂРЅР°С‚С‚С‹",
+    networkDownloaded: "Р¤Р°Р№Р» Р¶ТЇРєС‚РµР»РґС–",
+    networkDownloadCancelled: "Р–ТЇРєС‚РµСѓ С‚РѕТ›С‚Р°С‚С‹Р»РґС‹",
+    networkPage: "Р‘РµС‚",
+    networkDownloads: "Р¶ТЇРєС‚РµСѓ",
     networkApiKey: "CurseForge API key",
-    networkApiKeyPlaceholder: "CurseForge API key енгіз",
-    networkSaveApiKey: "Сақтау",
-    networkKeyReady: "Кілт сақталды",
-    networkKeyRequired: "Іздеу үшін CurseForge API key керек — енгізіп сақта.",
-    networkKeySaveError: "CurseForge API key сақталмады",
-    networkKeyBundled: "Ішкі кілт табылды",
-    game: "Ойын",
-    gameSub: "Нұсқалар, орнату және іске қосу.",
-    gameSearchPlaceholder: "Нұсқаны іздеу, мысалы 1.21.120",
-    gameAllTypes: "Барлығы",
+    networkApiKeyPlaceholder: "CurseForge API key РµРЅРіС–Р·",
+    networkSaveApiKey: "РЎР°Т›С‚Р°Сѓ",
+    networkKeyReady: "РљС–Р»С‚ СЃР°Т›С‚Р°Р»РґС‹",
+    networkKeyRequired: "Р†Р·РґРµСѓ ТЇС€С–РЅ CurseForge API key РєРµСЂРµРє вЂ” РµРЅРіС–Р·С–Рї СЃР°Т›С‚Р°.",
+    networkKeySaveError: "CurseForge API key СЃР°Т›С‚Р°Р»РјР°РґС‹",
+    networkKeyBundled: "Р†С€РєС– РєС–Р»С‚ С‚Р°Р±С‹Р»РґС‹",
+    game: "РћР№С‹РЅ",
+    gameSub: "РќТ±СЃТ›Р°Р»Р°СЂ, РѕСЂРЅР°С‚Сѓ Р¶У™РЅРµ С–СЃРєРµ Т›РѕСЃСѓ.",
+    gameSearchPlaceholder: "РќТ±СЃТ›Р°РЅС‹ С–Р·РґРµСѓ, РјС‹СЃР°Р»С‹ 1.21.120",
+    gameAllTypes: "Р‘Р°СЂР»С‹Т“С‹",
     gameRelease: "Release",
     gamePreview: "Preview",
     gameLegacy: "Legacy UWP",
-    gameRefresh: "Нұсқаларды жаңарту",
-    gameVersionsFolder: "Нұсқалар қалтасы",
-    gameInstallersFolder: "Пакеттер",
-    gameReady: "Нұсқалар каталогы әлі жүктелмеді.",
-    gameLoadingCatalog: "Нұсқалар каталогы жүктелуде...",
-    gameCatalogError: "Нұсқалар каталогының қатесі",
-    gameAvailableVersions: "Қолжетімді нұсқалар",
-    gameInstalledVersions: "Орнатылған",
-    gameInstallVersion: "Жүктеу және орнату",
-    gameLaunch: "Іске қосу",
-    gameDelete: "Жою",
-    gameDeleteConfirm: "Осы орнатылған нұсқаны Falon ішінен жою керек пе?",
-    gameDeleteDone: "Нұсқа жойылды",
-    gameDeleteError: "Нұсқаны жою қатесі",
-    gameVersionSource: "Дереккөз",
-    gameInstallStarted: "Нұсқаны орнату басталды",
-    gameInstallDone: "Нұсқа орнатылды",
-    gameInstallError: "Нұсқаны орнату қатесі",
-    gameLaunchError: "Іске қосу қатесі",
-    gameNoVersions: "Нұсқалар табылмады",
-    gameNoInstalled: "Орнатылған нұсқалар жоқ",
-    gameDownloaded: "жүктелді",
-    gameInstalling: "Орнатылуда...",
+    gameRefresh: "РќТ±СЃТ›Р°Р»Р°СЂРґС‹ Р¶Р°ТЈР°СЂС‚Сѓ",
+    gameVersionsFolder: "РќТ±СЃТ›Р°Р»Р°СЂ Т›Р°Р»С‚Р°СЃС‹",
+    gameInstallersFolder: "РџР°РєРµС‚С‚РµСЂ",
+    gameReady: "РќТ±СЃТ›Р°Р»Р°СЂ РєР°С‚Р°Р»РѕРіС‹ У™Р»С– Р¶ТЇРєС‚РµР»РјРµРґС–.",
+    gameLoadingCatalog: "РќТ±СЃТ›Р°Р»Р°СЂ РєР°С‚Р°Р»РѕРіС‹ Р¶ТЇРєС‚РµР»СѓРґРµ...",
+    gameCatalogError: "РќТ±СЃТ›Р°Р»Р°СЂ РєР°С‚Р°Р»РѕРіС‹РЅС‹ТЈ Т›Р°С‚РµСЃС–",
+    gameAvailableVersions: "ТљРѕР»Р¶РµС‚С–РјРґС– РЅТ±СЃТ›Р°Р»Р°СЂ",
+    gameInstalledVersions: "РћСЂРЅР°С‚С‹Р»Т“Р°РЅ",
+    gameInstallVersion: "Р–ТЇРєС‚РµСѓ Р¶У™РЅРµ РѕСЂРЅР°С‚Сѓ",
+    gameLaunch: "Р†СЃРєРµ Т›РѕСЃСѓ",
+    gameDelete: "Р–РѕСЋ",
+    gameDeleteConfirm: "РћСЃС‹ РѕСЂРЅР°С‚С‹Р»Т“Р°РЅ РЅТ±СЃТ›Р°РЅС‹ Falon С–С€С–РЅРµРЅ Р¶РѕСЋ РєРµСЂРµРє РїРµ?",
+    gameDeleteDone: "РќТ±СЃТ›Р° Р¶РѕР№С‹Р»РґС‹",
+    gameDeleteError: "РќТ±СЃТ›Р°РЅС‹ Р¶РѕСЋ Т›Р°С‚РµСЃС–",
+    gameVersionSource: "Р”РµСЂРµРєРєУ©Р·",
+    gameInstallStarted: "РќТ±СЃТ›Р°РЅС‹ РѕСЂРЅР°С‚Сѓ Р±Р°СЃС‚Р°Р»РґС‹",
+    gameInstallDone: "РќТ±СЃТ›Р° РѕСЂРЅР°С‚С‹Р»РґС‹",
+    gameInstallError: "РќТ±СЃТ›Р°РЅС‹ РѕСЂРЅР°С‚Сѓ Т›Р°С‚РµСЃС–",
+    gameLaunchError: "Р†СЃРєРµ Т›РѕСЃСѓ Т›Р°С‚РµСЃС–",
+    gameNoVersions: "РќТ±СЃТ›Р°Р»Р°СЂ С‚Р°Р±С‹Р»РјР°РґС‹",
+    gameNoInstalled: "РћСЂРЅР°С‚С‹Р»Т“Р°РЅ РЅТ±СЃТ›Р°Р»Р°СЂ Р¶РѕТ›",
+    gameDownloaded: "Р¶ТЇРєС‚РµР»РґС–",
+    gameInstalling: "РћСЂРЅР°С‚С‹Р»СѓРґР°...",
     active: "ACTIVE"
   },
   uk: {
-    langName: "Українська",
+    langName: "РЈРєСЂР°С—РЅСЃСЊРєР°",
     appName: "Falon",
-    accessKey: "Ключ доступу",
-    uploadWallpaper: "Завантажити шпалери",
-    exit: "Вийти",
-    buyKey: "Купити ключ",
+    accessKey: "РљР»СЋС‡ РґРѕСЃС‚СѓРїСѓ",
+    uploadWallpaper: "Р—Р°РІР°РЅС‚Р°Р¶РёС‚Рё С€РїР°Р»РµСЂРё",
+    exit: "Р’РёР№С‚Рё",
+    buyKey: "РљСѓРїРёС‚Рё РєР»СЋС‡",
     freeKey: "Free key",
     freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
     freeKeyOneTime: "Free 3-day access",
     freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
     openCreatorXbox: "Contact support: @molygench",
-    understood: "Зрозуміло",
-    creatorLiveTitle: "Творець лаунчера стримить Minecraft",
-    creatorLiveSub: "Приєднуйся!",
-    openTikTok: "Відкрити TikTok",
-    ready: "Готово",
-    wallpaper: "Шпалери",
-    refresh: "Оновити",
-    blurOn: "Блюр: Увімк",
-    blurOff: "Блюр: Вимк",
-    upload: "Завантаження",
-    myResources: "Мої ресурси",
-    worlds: "Світи",
+    understood: "Р—СЂРѕР·СѓРјС–Р»Рѕ",
+    creatorLiveTitle: "РўРІРѕСЂРµС†СЊ Р»Р°СѓРЅС‡РµСЂР° СЃС‚СЂРёРјРёС‚СЊ Minecraft",
+    creatorLiveSub: "РџСЂРёС”РґРЅСѓР№СЃСЏ!",
+    openTikTok: "Р’С–РґРєСЂРёС‚Рё TikTok",
+    ready: "Р“РѕС‚РѕРІРѕ",
+    wallpaper: "РЁРїР°Р»РµСЂРё",
+    refresh: "РћРЅРѕРІРёС‚Рё",
+    blurOn: "Р‘Р»СЋСЂ: РЈРІС–РјРє",
+    blurOff: "Р‘Р»СЋСЂ: Р’РёРјРє",
+    upload: "Р—Р°РІР°РЅС‚Р°Р¶РµРЅРЅСЏ",
+    myResources: "РњРѕС— СЂРµСЃСѓСЂСЃРё",
+    worlds: "РЎРІС–С‚Рё",
     users: "Users",
-    path: "Шлях",
-    uploadSub: "Ресурси, аддони та світи.",
-    dropFile: "Перетягни файл",
-    noFile: "Файл не вибрано",
-    file: "Файл",
-    profiles: "Профілі",
-    all: "Усі",
-    clear: "Зняти",
-    install: "Встановити",
-    resourcesSub: "RP/BP для вибраної версії / User.",
-    worldsSub: "Світи вибраної версії / User.",
-    uploadToUser: "Завантажити в User",
-    status: "Статус",
-    profileCount: "Профілів",
-    key: "Ключ",
-    log: "Лог",
-    chooseCurrency: "Оберіть валюту",
-    buy: "Купити",
-    pricePrefix: "Вартість ключа",
-    payNote: "Перед оплатою вкажіть Telegram або пошту, куди буде надіслано код доступу. Час очікування: 5–10 хвилин.",
-    wrongKey: "Невірний або прострочений ключ",
-    keyExpired: "Термін дії ключа минув",
-    keyDeviceMismatch: "Цей ключ уже прив’язаний до іншого комп’ютера",
-    keyActivationError: "Не вдалося перевірити ключ",
-    keyTimeLeft: "До деактивації",
-    profilesFound: "Профілів знайдено",
-    scanError: "Помилка сканування",
-    chooseFileFirst: "Спочатку виберіть файл",
-    dropUnsupported: "Перетягніть .mcpack, .mcaddon, .mcworld або .zip",
-    dropPathError: "Не вдалося прочитати шлях до файла — скористайтесь кнопкою «Файл»",
-    noUserSelected: "Не вибрано жодного User",
-    installing: "Встановлення...",
-    installedWorld: "Світ",
-    installedTo: "встановлено в",
-    oldRemoved: "старих видалено",
-    installedPack: "Пак",
-    installError: "Помилка встановлення",
-    userNotSelected: "User не вибрано",
-    resourcesNotFound: "Ресурси не знайдено",
-    worldsNotFound: "Світи не знайдено",
-    openFolder: "Папка",
-    delete: "Видалити",
-    deleteResourceConfirm: "Видалити ресурс і прибрати його зі світів?",
-    deleteWorldConfirm: "Видалити цей світ?",
-    deleted: "Видалено",
-    worldDeleted: "Світ видалено",
-    deleteError: "Помилка видалення",
-    worldDeleteError: "Помилка видалення світу",
-    resourcesError: "Помилка ресурсів",
-    worldsError: "Помилка світів",
-    wallpaperUpdated: "Шпалери оновлено",
-    wallpaperError: "Помилка шпалер",
-    videoPlaybackError: "Відео вибрано, але воно не відтворилось. Краще MP4 або WEBM.",
-    imageLoadError: "Зображення не завантажилось.",
-    iconUpdated: "Іконку оновлено",
-    iconError: "Помилка іконки",
-    iconLoadError: "Іконка не завантажилась",
-    checkoutConfirm: "Перед оплатою вкажіть Telegram або пошту, куди буде надіслано код доступу.\n\nЧас очікування: 5–10 хвилин.\n\nПерейти до оплати?",
-    network: "Мережа",
-    networkSub: "CurseForge для Bedrock.",
-    networkSearchPlaceholder: "Пошук Bedrock-контенту",
-    networkAllTypes: "Усі типи",
-    networkSortDownloads: "За завантаженнями",
-    networkSortUpdated: "Оновлені",
-    networkSortFeatured: "Рекомендовані",
-    networkSortName: "За назвою",
-    networkSearchBtn: "Знайти",
-    networkInstallProfiles: "Профілі встановлення",
-    networkIntro: "Пошук аддонів, карт, текстур і скриптів Bedrock.",
-    networkLoading: "Завантажую CurseForge...",
-    networkClassLoadError: "Не вдалося завантажити типи CurseForge",
-    networkSearchError: "Помилка пошуку CurseForge",
-    networkNoResults: "Нічого не знайдено",
-    networkInstall: "Встановити",
-    networkDownload: "Завантажити",
+    path: "РЁР»СЏС…",
+    uploadSub: "Р РµСЃСѓСЂСЃРё, Р°РґРґРѕРЅРё С‚Р° СЃРІС–С‚Рё.",
+    dropFile: "РџРµСЂРµС‚СЏРіРЅРё С„Р°Р№Р»",
+    noFile: "Р¤Р°Р№Р» РЅРµ РІРёР±СЂР°РЅРѕ",
+    file: "Р¤Р°Р№Р»",
+    profiles: "РџСЂРѕС„С–Р»С–",
+    all: "РЈСЃС–",
+    clear: "Р—РЅСЏС‚Рё",
+    install: "Р’СЃС‚Р°РЅРѕРІРёС‚Рё",
+    resourcesSub: "RP/BP РґР»СЏ РІРёР±СЂР°РЅРѕС— РІРµСЂСЃС–С— / User.",
+    worldsSub: "РЎРІС–С‚Рё РІРёР±СЂР°РЅРѕС— РІРµСЂСЃС–С— / User.",
+    uploadToUser: "Р—Р°РІР°РЅС‚Р°Р¶РёС‚Рё РІ User",
+    status: "РЎС‚Р°С‚СѓСЃ",
+    profileCount: "РџСЂРѕС„С–Р»С–РІ",
+    key: "РљР»СЋС‡",
+    log: "Р›РѕРі",
+    chooseCurrency: "РћР±РµСЂС–С‚СЊ РІР°Р»СЋС‚Сѓ",
+    buy: "РљСѓРїРёС‚Рё",
+    pricePrefix: "Р’Р°СЂС‚С–СЃС‚СЊ РєР»СЋС‡Р°",
+    payNote: "РџРµСЂРµРґ РѕРїР»Р°С‚РѕСЋ РІРєР°Р¶С–С‚СЊ Telegram Р°Р±Рѕ РїРѕС€С‚Сѓ, РєСѓРґРё Р±СѓРґРµ РЅР°РґС–СЃР»Р°РЅРѕ РєРѕРґ РґРѕСЃС‚СѓРїСѓ. Р§Р°СЃ РѕС‡С–РєСѓРІР°РЅРЅСЏ: 5вЂ“10 С…РІРёР»РёРЅ.",
+    wrongKey: "РќРµРІС–СЂРЅРёР№ Р°Р±Рѕ РїСЂРѕСЃС‚СЂРѕС‡РµРЅРёР№ РєР»СЋС‡",
+    keyExpired: "РўРµСЂРјС–РЅ РґС–С— РєР»СЋС‡Р° РјРёРЅСѓРІ",
+    keyDeviceMismatch: "Р¦РµР№ РєР»СЋС‡ СѓР¶Рµ РїСЂРёРІвЂ™СЏР·Р°РЅРёР№ РґРѕ С–РЅС€РѕРіРѕ РєРѕРјРївЂ™СЋС‚РµСЂР°",
+    keyActivationError: "РќРµ РІРґР°Р»РѕСЃСЏ РїРµСЂРµРІС–СЂРёС‚Рё РєР»СЋС‡",
+    keyTimeLeft: "Р”Рѕ РґРµР°РєС‚РёРІР°С†С–С—",
+    profilesFound: "РџСЂРѕС„С–Р»С–РІ Р·РЅР°Р№РґРµРЅРѕ",
+    scanError: "РџРѕРјРёР»РєР° СЃРєР°РЅСѓРІР°РЅРЅСЏ",
+    chooseFileFirst: "РЎРїРѕС‡Р°С‚РєСѓ РІРёР±РµСЂС–С‚СЊ С„Р°Р№Р»",
+    dropUnsupported: "РџРµСЂРµС‚СЏРіРЅС–С‚СЊ .mcpack, .mcaddon, .mcworld Р°Р±Рѕ .zip",
+    dropPathError: "РќРµ РІРґР°Р»РѕСЃСЏ РїСЂРѕС‡РёС‚Р°С‚Рё С€Р»СЏС… РґРѕ С„Р°Р№Р»Р° вЂ” СЃРєРѕСЂРёСЃС‚Р°Р№С‚РµСЃСЊ РєРЅРѕРїРєРѕСЋ В«Р¤Р°Р№Р»В»",
+    noUserSelected: "РќРµ РІРёР±СЂР°РЅРѕ Р¶РѕРґРЅРѕРіРѕ User",
+    installing: "Р’СЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ...",
+    installedWorld: "РЎРІС–С‚",
+    installedTo: "РІСЃС‚Р°РЅРѕРІР»РµРЅРѕ РІ",
+    oldRemoved: "СЃС‚Р°СЂРёС… РІРёРґР°Р»РµРЅРѕ",
+    installedPack: "РџР°Рє",
+    installError: "РџРѕРјРёР»РєР° РІСЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ",
+    userNotSelected: "User РЅРµ РІРёР±СЂР°РЅРѕ",
+    resourcesNotFound: "Р РµСЃСѓСЂСЃРё РЅРµ Р·РЅР°Р№РґРµРЅРѕ",
+    worldsNotFound: "РЎРІС–С‚Рё РЅРµ Р·РЅР°Р№РґРµРЅРѕ",
+    openFolder: "РџР°РїРєР°",
+    delete: "Р’РёРґР°Р»РёС‚Рё",
+    deleteResourceConfirm: "Р’РёРґР°Р»РёС‚Рё СЂРµСЃСѓСЂСЃ С– РїСЂРёР±СЂР°С‚Рё Р№РѕРіРѕ Р·С– СЃРІС–С‚С–РІ?",
+    deleteWorldConfirm: "Р’РёРґР°Р»РёС‚Рё С†РµР№ СЃРІС–С‚?",
+    deleted: "Р’РёРґР°Р»РµРЅРѕ",
+    worldDeleted: "РЎРІС–С‚ РІРёРґР°Р»РµРЅРѕ",
+    deleteError: "РџРѕРјРёР»РєР° РІРёРґР°Р»РµРЅРЅСЏ",
+    worldDeleteError: "РџРѕРјРёР»РєР° РІРёРґР°Р»РµРЅРЅСЏ СЃРІС–С‚Сѓ",
+    resourcesError: "РџРѕРјРёР»РєР° СЂРµСЃСѓСЂСЃС–РІ",
+    worldsError: "РџРѕРјРёР»РєР° СЃРІС–С‚С–РІ",
+    wallpaperUpdated: "РЁРїР°Р»РµСЂРё РѕРЅРѕРІР»РµРЅРѕ",
+    wallpaperError: "РџРѕРјРёР»РєР° С€РїР°Р»РµСЂ",
+    videoPlaybackError: "Р’С–РґРµРѕ РІРёР±СЂР°РЅРѕ, Р°Р»Рµ РІРѕРЅРѕ РЅРµ РІС–РґС‚РІРѕСЂРёР»РѕСЃСЊ. РљСЂР°С‰Рµ MP4 Р°Р±Рѕ WEBM.",
+    imageLoadError: "Р—РѕР±СЂР°Р¶РµРЅРЅСЏ РЅРµ Р·Р°РІР°РЅС‚Р°Р¶РёР»РѕСЃСЊ.",
+    iconUpdated: "Р†РєРѕРЅРєСѓ РѕРЅРѕРІР»РµРЅРѕ",
+    iconError: "РџРѕРјРёР»РєР° С–РєРѕРЅРєРё",
+    iconLoadError: "Р†РєРѕРЅРєР° РЅРµ Р·Р°РІР°РЅС‚Р°Р¶РёР»Р°СЃСЊ",
+    checkoutConfirm: "РџРµСЂРµРґ РѕРїР»Р°С‚РѕСЋ РІРєР°Р¶С–С‚СЊ Telegram Р°Р±Рѕ РїРѕС€С‚Сѓ, РєСѓРґРё Р±СѓРґРµ РЅР°РґС–СЃР»Р°РЅРѕ РєРѕРґ РґРѕСЃС‚СѓРїСѓ.\n\nР§Р°СЃ РѕС‡С–РєСѓРІР°РЅРЅСЏ: 5вЂ“10 С…РІРёР»РёРЅ.\n\nРџРµСЂРµР№С‚Рё РґРѕ РѕРїР»Р°С‚Рё?",
+    network: "РњРµСЂРµР¶Р°",
+    networkSub: "CurseForge РґР»СЏ Bedrock.",
+    networkSearchPlaceholder: "РџРѕС€СѓРє Bedrock-РєРѕРЅС‚РµРЅС‚Сѓ",
+    networkAllTypes: "РЈСЃС– С‚РёРїРё",
+    networkSortDownloads: "Р—Р° Р·Р°РІР°РЅС‚Р°Р¶РµРЅРЅСЏРјРё",
+    networkSortUpdated: "РћРЅРѕРІР»РµРЅС–",
+    networkSortFeatured: "Р РµРєРѕРјРµРЅРґРѕРІР°РЅС–",
+    networkSortName: "Р—Р° РЅР°Р·РІРѕСЋ",
+    networkSearchBtn: "Р—РЅР°Р№С‚Рё",
+    networkInstallProfiles: "РџСЂРѕС„С–Р»С– РІСЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ",
+    networkIntro: "РџРѕС€СѓРє Р°РґРґРѕРЅС–РІ, РєР°СЂС‚, С‚РµРєСЃС‚СѓСЂ С– СЃРєСЂРёРїС‚С–РІ Bedrock.",
+    networkLoading: "Р—Р°РІР°РЅС‚Р°Р¶СѓСЋ CurseForge...",
+    networkClassLoadError: "РќРµ РІРґР°Р»РѕСЃСЏ Р·Р°РІР°РЅС‚Р°Р¶РёС‚Рё С‚РёРїРё CurseForge",
+    networkSearchError: "РџРѕРјРёР»РєР° РїРѕС€СѓРєСѓ CurseForge",
+    networkNoResults: "РќС–С‡РѕРіРѕ РЅРµ Р·РЅР°Р№РґРµРЅРѕ",
+    networkInstall: "Р’СЃС‚Р°РЅРѕРІРёС‚Рё",
+    networkDownload: "Р—Р°РІР°РЅС‚Р°Р¶РёС‚Рё",
     networkOpen: "CurseForge",
-    networkInstallUnsupported: "Файл є, але формат встановлення не підтримується",
-    networkDownloading: "Завантажую з CurseForge...",
-    networkInstalling: "Встановлюю з CurseForge...",
-    networkInstalled: "CurseForge встановив",
-    networkDownloaded: "Файл завантажено",
-    networkDownloadCancelled: "Завантаження скасовано",
-    networkPage: "Сторінка",
-    networkDownloads: "завантажень",
+    networkInstallUnsupported: "Р¤Р°Р№Р» С”, Р°Р»Рµ С„РѕСЂРјР°С‚ РІСЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ РЅРµ РїС–РґС‚СЂРёРјСѓС”С‚СЊСЃСЏ",
+    networkDownloading: "Р—Р°РІР°РЅС‚Р°Р¶СѓСЋ Р· CurseForge...",
+    networkInstalling: "Р’СЃС‚Р°РЅРѕРІР»СЋСЋ Р· CurseForge...",
+    networkInstalled: "CurseForge РІСЃС‚Р°РЅРѕРІРёРІ",
+    networkDownloaded: "Р¤Р°Р№Р» Р·Р°РІР°РЅС‚Р°Р¶РµРЅРѕ",
+    networkDownloadCancelled: "Р—Р°РІР°РЅС‚Р°Р¶РµРЅРЅСЏ СЃРєР°СЃРѕРІР°РЅРѕ",
+    networkPage: "РЎС‚РѕСЂС–РЅРєР°",
+    networkDownloads: "Р·Р°РІР°РЅС‚Р°Р¶РµРЅСЊ",
     networkApiKey: "CurseForge API key",
-    networkApiKeyPlaceholder: "Встав CurseForge API key",
-    networkSaveApiKey: "Зберегти",
-    networkKeyReady: "Ключ збережено",
-    networkKeyRequired: "Для пошуку потрібен CurseForge API key — встав його тут і збережи.",
-    networkKeySaveError: "Не вдалося зберегти CurseForge API key",
-    networkKeyBundled: "Вбудований ключ знайдено",
-    game: "Гра",
-    gameSub: "Версії, встановлення та запуск.",
-    gameSearchPlaceholder: "Пошук версії, наприклад 1.21.120",
-    gameAllTypes: "Усі",
+    networkApiKeyPlaceholder: "Р’СЃС‚Р°РІ CurseForge API key",
+    networkSaveApiKey: "Р—Р±РµСЂРµРіС‚Рё",
+    networkKeyReady: "РљР»СЋС‡ Р·Р±РµСЂРµР¶РµРЅРѕ",
+    networkKeyRequired: "Р”Р»СЏ РїРѕС€СѓРєСѓ РїРѕС‚СЂС–Р±РµРЅ CurseForge API key вЂ” РІСЃС‚Р°РІ Р№РѕРіРѕ С‚СѓС‚ С– Р·Р±РµСЂРµР¶Рё.",
+    networkKeySaveError: "РќРµ РІРґР°Р»РѕСЃСЏ Р·Р±РµСЂРµРіС‚Рё CurseForge API key",
+    networkKeyBundled: "Р’Р±СѓРґРѕРІР°РЅРёР№ РєР»СЋС‡ Р·РЅР°Р№РґРµРЅРѕ",
+    game: "Р“СЂР°",
+    gameSub: "Р’РµСЂСЃС–С—, РІСЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ С‚Р° Р·Р°РїСѓСЃРє.",
+    gameSearchPlaceholder: "РџРѕС€СѓРє РІРµСЂСЃС–С—, РЅР°РїСЂРёРєР»Р°Рґ 1.21.120",
+    gameAllTypes: "РЈСЃС–",
     gameRelease: "Release",
     gamePreview: "Preview",
     gameLegacy: "Legacy UWP",
-    gameRefresh: "Оновити версії",
-    gameVersionsFolder: "Тека версій",
-    gameInstallersFolder: "Пакети",
-    gameReady: "Каталог версій ще не завантажено.",
-    gameLoadingCatalog: "Завантажую каталог версій...",
-    gameCatalogError: "Помилка каталогу версій",
-    gameAvailableVersions: "Доступні версії",
-    gameInstalledVersions: "Встановлені",
-    gameInstallVersion: "Завантажити й встановити",
-    gameLaunch: "Запустити",
-    gameDelete: "Видалити",
-    gameDeleteConfirm: "Видалити цю встановлену версію з Falon?",
-    gameDeleteDone: "Версію видалено",
-    gameDeleteError: "Помилка видалення версії",
-    gameVersionSource: "Джерело",
-    gameInstallStarted: "Починаю встановлення версії",
-    gameInstallDone: "Версію встановлено",
-    gameInstallError: "Помилка встановлення версії",
-    gameLaunchError: "Помилка запуску версії",
-    gameNoVersions: "Версії не знайдено",
-    gameNoInstalled: "Встановлених версій поки немає",
-    gameDownloaded: "завантажено",
-    gameInstalling: "Встановлення...",
+    gameRefresh: "РћРЅРѕРІРёС‚Рё РІРµСЂСЃС–С—",
+    gameVersionsFolder: "РўРµРєР° РІРµСЂСЃС–Р№",
+    gameInstallersFolder: "РџР°РєРµС‚Рё",
+    gameReady: "РљР°С‚Р°Р»РѕРі РІРµСЂСЃС–Р№ С‰Рµ РЅРµ Р·Р°РІР°РЅС‚Р°Р¶РµРЅРѕ.",
+    gameLoadingCatalog: "Р—Р°РІР°РЅС‚Р°Р¶СѓСЋ РєР°С‚Р°Р»РѕРі РІРµСЂСЃС–Р№...",
+    gameCatalogError: "РџРѕРјРёР»РєР° РєР°С‚Р°Р»РѕРіСѓ РІРµСЂСЃС–Р№",
+    gameAvailableVersions: "Р”РѕСЃС‚СѓРїРЅС– РІРµСЂСЃС–С—",
+    gameInstalledVersions: "Р’СЃС‚Р°РЅРѕРІР»РµРЅС–",
+    gameInstallVersion: "Р—Р°РІР°РЅС‚Р°Р¶РёС‚Рё Р№ РІСЃС‚Р°РЅРѕРІРёС‚Рё",
+    gameLaunch: "Р—Р°РїСѓСЃС‚РёС‚Рё",
+    gameDelete: "Р’РёРґР°Р»РёС‚Рё",
+    gameDeleteConfirm: "Р’РёРґР°Р»РёС‚Рё С†СЋ РІСЃС‚Р°РЅРѕРІР»РµРЅСѓ РІРµСЂСЃС–СЋ Р· Falon?",
+    gameDeleteDone: "Р’РµСЂСЃС–СЋ РІРёРґР°Р»РµРЅРѕ",
+    gameDeleteError: "РџРѕРјРёР»РєР° РІРёРґР°Р»РµРЅРЅСЏ РІРµСЂСЃС–С—",
+    gameVersionSource: "Р”Р¶РµСЂРµР»Рѕ",
+    gameInstallStarted: "РџРѕС‡РёРЅР°СЋ РІСЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ РІРµСЂСЃС–С—",
+    gameInstallDone: "Р’РµСЂСЃС–СЋ РІСЃС‚Р°РЅРѕРІР»РµРЅРѕ",
+    gameInstallError: "РџРѕРјРёР»РєР° РІСЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ РІРµСЂСЃС–С—",
+    gameLaunchError: "РџРѕРјРёР»РєР° Р·Р°РїСѓСЃРєСѓ РІРµСЂСЃС–С—",
+    gameNoVersions: "Р’РµСЂСЃС–С— РЅРµ Р·РЅР°Р№РґРµРЅРѕ",
+    gameNoInstalled: "Р’СЃС‚Р°РЅРѕРІР»РµРЅРёС… РІРµСЂСЃС–Р№ РїРѕРєРё РЅРµРјР°С”",
+    gameDownloaded: "Р·Р°РІР°РЅС‚Р°Р¶РµРЅРѕ",
+    gameInstalling: "Р’СЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ...",
     active: "ACTIVE"
   },
   tr: {
-    langName: "Türkçe",
+    langName: "TГјrkГ§e",
     appName: "Falon",
-    accessKey: "Erişim anahtarı",
-    uploadWallpaper: "Duvar kağıdı yükle",
-    exit: "Çıkış",
-    buyKey: "Anahtar satın al",
+    accessKey: "EriЕџim anahtarД±",
+    uploadWallpaper: "Duvar kaДџД±dД± yГјkle",
+    exit: "Г‡Д±kД±Еџ",
+    buyKey: "Anahtar satД±n al",
     freeKey: "Free key",
     freeKeyLead: "To receive a free 3-day key, star our GitHub repository.",
     freeKeyOneTime: "Free 3-day access",
     freeKeyNote: "After starring the repository, contact support at @molygench and provide proof plus your GitHub ID.",
     openCreatorXbox: "Contact support: @molygench",
-    understood: "Anladım",
-    creatorLiveTitle: "Başlatıcı oluşturucusu Minecraft yayını yapıyor",
-    creatorLiveSub: "Yayına katıl!",
-    openTikTok: "TikTok'u aç",
-    ready: "Hazır",
-    wallpaper: "Duvar kağıdı",
+    understood: "AnladД±m",
+    creatorLiveTitle: "BaЕџlatД±cД± oluЕџturucusu Minecraft yayД±nД± yapД±yor",
+    creatorLiveSub: "YayД±na katД±l!",
+    openTikTok: "TikTok'u aГ§",
+    ready: "HazД±r",
+    wallpaper: "Duvar kaДџД±dД±",
     refresh: "Yenile",
-    blurOn: "Bulanık: Açık",
-    blurOff: "Bulanık: Kapalı",
-    upload: "Yükleme",
-    myResources: "Kaynaklarım",
-    worlds: "Dünyalar",
+    blurOn: "BulanД±k: AГ§Д±k",
+    blurOff: "BulanД±k: KapalД±",
+    upload: "YГјkleme",
+    myResources: "KaynaklarД±m",
+    worlds: "DГјnyalar",
     users: "Users",
     path: "Yol",
-    uploadSub: "Kaynaklar, eklentiler ve dünyalar.",
-    dropFile: "Dosyayı bırak",
-    noFile: "Dosya seçilmedi",
+    uploadSub: "Kaynaklar, eklentiler ve dГјnyalar.",
+    dropFile: "DosyayД± bД±rak",
+    noFile: "Dosya seГ§ilmedi",
     file: "Dosya",
     profiles: "Profiller",
-    all: "Tümü",
+    all: "TГјmГј",
     clear: "Temizle",
     install: "Kur",
-    resourcesSub: "Seçili sürüm / User için RP/BP.",
-    worldsSub: "Seçili sürüm / User dünyaları.",
-    uploadToUser: "User içine yükle",
+    resourcesSub: "SeГ§ili sГјrГјm / User iГ§in RP/BP.",
+    worldsSub: "SeГ§ili sГјrГјm / User dГјnyalarД±.",
+    uploadToUser: "User iГ§ine yГјkle",
     status: "Durum",
     profileCount: "Profil",
     key: "Anahtar",
-    log: "Günlük",
-    chooseCurrency: "Para birimini seçin",
-    buy: "Satın al",
-    pricePrefix: "Anahtar fiyatı",
-    payNote: "Ödeme öncesi erişim kodunun gönderileceği Telegram veya e-posta adresini yazın. Bekleme süresi: 5–10 dakika.",
-    wrongKey: "Geçersiz veya süresi dolmuş anahtar",
-    keyExpired: "Anahtarın süresi doldu",
-    keyDeviceMismatch: "Bu anahtar başka bir bilgisayara bağlı",
-    keyActivationError: "Anahtar doğrulanamadı",
-    keyTimeLeft: "Devre dışı kalmasına",
+    log: "GГјnlГјk",
+    chooseCurrency: "Para birimini seГ§in",
+    buy: "SatД±n al",
+    pricePrefix: "Anahtar fiyatД±",
+    payNote: "Г–deme Г¶ncesi eriЕџim kodunun gГ¶nderileceДџi Telegram veya e-posta adresini yazД±n. Bekleme sГјresi: 5вЂ“10 dakika.",
+    wrongKey: "GeГ§ersiz veya sГјresi dolmuЕџ anahtar",
+    keyExpired: "AnahtarД±n sГјresi doldu",
+    keyDeviceMismatch: "Bu anahtar baЕџka bir bilgisayara baДџlД±",
+    keyActivationError: "Anahtar doДџrulanamadД±",
+    keyTimeLeft: "Devre dД±ЕџД± kalmasД±na",
     profilesFound: "Bulunan profiller",
-    scanError: "Tarama hatası",
-    chooseFileFirst: "Önce dosya seç",
-    dropUnsupported: ".mcpack, .mcaddon, .mcworld veya .zip dosyası bırak",
-    dropPathError: "Dosya yolu okunamadı — Dosya düğmesini kullan",
-    noUserSelected: "Hiç User seçilmedi",
+    scanError: "Tarama hatasД±",
+    chooseFileFirst: "Г–nce dosya seГ§",
+    dropUnsupported: ".mcpack, .mcaddon, .mcworld veya .zip dosyasД± bД±rak",
+    dropPathError: "Dosya yolu okunamadД± вЂ” Dosya dГјДџmesini kullan",
+    noUserSelected: "HiГ§ User seГ§ilmedi",
     installing: "Kuruluyor...",
-    installedWorld: "Dünya",
-    installedTo: "şuraya kuruldu",
-    oldRemoved: "eski kaldırıldı",
+    installedWorld: "DГјnya",
+    installedTo: "Еџuraya kuruldu",
+    oldRemoved: "eski kaldД±rД±ldД±",
     installedPack: "Paket",
-    installError: "Kurulum hatası",
-    userNotSelected: "User seçilmedi",
-    resourcesNotFound: "Kaynak bulunamadı",
-    worldsNotFound: "Dünya bulunamadı",
-    openFolder: "Klasör",
+    installError: "Kurulum hatasД±",
+    userNotSelected: "User seГ§ilmedi",
+    resourcesNotFound: "Kaynak bulunamadД±",
+    worldsNotFound: "DГјnya bulunamadД±",
+    openFolder: "KlasГ¶r",
     delete: "Sil",
-    deleteResourceConfirm: "Bu kaynağı silip dünyalardan kaldırmak istiyor musun?",
-    deleteWorldConfirm: "Bu dünyayı silmek istiyor musun?",
+    deleteResourceConfirm: "Bu kaynaДџД± silip dГјnyalardan kaldД±rmak istiyor musun?",
+    deleteWorldConfirm: "Bu dГјnyayД± silmek istiyor musun?",
     deleted: "Silindi",
-    worldDeleted: "Dünya silindi",
-    deleteError: "Silme hatası",
-    worldDeleteError: "Dünya silme hatası",
-    resourcesError: "Kaynak hatası",
-    worldsError: "Dünya hatası",
-    wallpaperUpdated: "Duvar kağıdı güncellendi",
-    wallpaperError: "Duvar kağıdı hatası",
-    videoPlaybackError: "Video seçildi ama oynatılamadı. MP4 veya WEBM daha iyi.",
-    imageLoadError: "Görsel yüklenemedi.",
-    iconUpdated: "Simge güncellendi",
-    iconError: "Simge hatası",
-    iconLoadError: "Simge yüklenemedi",
-    checkoutConfirm: "Ödeme öncesi erişim kodunun gönderileceği Telegram veya e-posta adresini yazın.\n\nBekleme süresi: 5–10 dakika.\n\nÖdeme sayfasını aç?",
-    network: "Ağ",
-    networkSub: "Bedrock için CurseForge.",
-    networkSearchPlaceholder: "Bedrock içeriği ara",
-    networkAllTypes: "Tüm türler",
-    networkSortDownloads: "İndirmeye göre",
-    networkSortUpdated: "Yeni güncellenen",
-    networkSortFeatured: "Öne çıkan",
-    networkSortName: "Ada göre",
+    worldDeleted: "DГјnya silindi",
+    deleteError: "Silme hatasД±",
+    worldDeleteError: "DГјnya silme hatasД±",
+    resourcesError: "Kaynak hatasД±",
+    worldsError: "DГјnya hatasД±",
+    wallpaperUpdated: "Duvar kaДџД±dД± gГјncellendi",
+    wallpaperError: "Duvar kaДџД±dД± hatasД±",
+    videoPlaybackError: "Video seГ§ildi ama oynatД±lamadД±. MP4 veya WEBM daha iyi.",
+    imageLoadError: "GГ¶rsel yГјklenemedi.",
+    iconUpdated: "Simge gГјncellendi",
+    iconError: "Simge hatasД±",
+    iconLoadError: "Simge yГјklenemedi",
+    checkoutConfirm: "Г–deme Г¶ncesi eriЕџim kodunun gГ¶nderileceДџi Telegram veya e-posta adresini yazД±n.\n\nBekleme sГјresi: 5вЂ“10 dakika.\n\nГ–deme sayfasД±nД± aГ§?",
+    network: "AДџ",
+    networkSub: "Bedrock iГ§in CurseForge.",
+    networkSearchPlaceholder: "Bedrock iГ§eriДџi ara",
+    networkAllTypes: "TГјm tГјrler",
+    networkSortDownloads: "Д°ndirmeye gГ¶re",
+    networkSortUpdated: "Yeni gГјncellenen",
+    networkSortFeatured: "Г–ne Г§Д±kan",
+    networkSortName: "Ada gГ¶re",
     networkSearchBtn: "Ara",
     networkInstallProfiles: "Kurulum profilleri",
-    networkIntro: "Bedrock eklentileri, haritaları, dokuları ve scriptlerini ara.",
-    networkLoading: "CurseForge yükleniyor...",
-    networkClassLoadError: "CurseForge türleri yüklenemedi",
-    networkSearchError: "CurseForge arama hatası",
-    networkNoResults: "Sonuç bulunamadı",
+    networkIntro: "Bedrock eklentileri, haritalarД±, dokularД± ve scriptlerini ara.",
+    networkLoading: "CurseForge yГјkleniyor...",
+    networkClassLoadError: "CurseForge tГјrleri yГјklenemedi",
+    networkSearchError: "CurseForge arama hatasД±",
+    networkNoResults: "SonuГ§ bulunamadД±",
     networkInstall: "Kur",
-    networkDownload: "İndir",
+    networkDownload: "Д°ndir",
     networkOpen: "CurseForge",
-    networkInstallUnsupported: "Dosya var, ancak kurulum biçimi desteklenmiyor",
+    networkInstallUnsupported: "Dosya var, ancak kurulum biГ§imi desteklenmiyor",
     networkDownloading: "CurseForge'dan indiriliyor...",
     networkInstalling: "CurseForge'dan kuruluyor...",
     networkInstalled: "CurseForge kurdu",
     networkDownloaded: "Dosya indirildi",
-    networkDownloadCancelled: "İndirme iptal edildi",
+    networkDownloadCancelled: "Д°ndirme iptal edildi",
     networkPage: "Sayfa",
     networkDownloads: "indirme",
     networkApiKey: "CurseForge API key",
-    networkApiKeyPlaceholder: "CurseForge API key yapıştır",
+    networkApiKeyPlaceholder: "CurseForge API key yapД±ЕџtД±r",
     networkSaveApiKey: "Kaydet",
     networkKeyReady: "Anahtar kaydedildi",
-    networkKeyRequired: "Arama için CurseForge API key gerekiyor — buraya yapıştırıp kaydet.",
+    networkKeyRequired: "Arama iГ§in CurseForge API key gerekiyor вЂ” buraya yapД±ЕџtД±rД±p kaydet.",
     networkKeySaveError: "CurseForge API key kaydedilemedi",
     networkKeyBundled: "Dahili anahtar bulundu",
     game: "Oyun",
-    gameSub: "Sürümler, kurulum ve başlatma.",
-    gameSearchPlaceholder: "Sürüm ara, örn. 1.21.120",
-    gameAllTypes: "Tümü",
+    gameSub: "SГјrГјmler, kurulum ve baЕџlatma.",
+    gameSearchPlaceholder: "SГјrГјm ara, Г¶rn. 1.21.120",
+    gameAllTypes: "TГјmГј",
     gameRelease: "Release",
     gamePreview: "Preview",
     gameLegacy: "Legacy UWP",
-    gameRefresh: "Sürümleri yenile",
-    gameVersionsFolder: "Sürümler klasörü",
+    gameRefresh: "SГјrГјmleri yenile",
+    gameVersionsFolder: "SГјrГјmler klasГ¶rГј",
     gameInstallersFolder: "Paketler",
-    gameReady: "Sürüm kataloğu henüz yüklenmedi.",
-    gameLoadingCatalog: "Sürüm kataloğu yükleniyor...",
-    gameCatalogError: "Sürüm kataloğu hatası",
-    gameAvailableVersions: "Mevcut sürümler",
+    gameReady: "SГјrГјm kataloДџu henГјz yГјklenmedi.",
+    gameLoadingCatalog: "SГјrГјm kataloДџu yГјkleniyor...",
+    gameCatalogError: "SГјrГјm kataloДџu hatasД±",
+    gameAvailableVersions: "Mevcut sГјrГјmler",
     gameInstalledVersions: "Kurulu",
-    gameInstallVersion: "İndir ve kur",
-    gameLaunch: "Başlat",
+    gameInstallVersion: "Д°ndir ve kur",
+    gameLaunch: "BaЕџlat",
     gameDelete: "Sil",
-    gameDeleteConfirm: "Bu kurulu sürüm Falon'dan silinsin mi?",
-    gameDeleteDone: "Sürüm silindi",
-    gameDeleteError: "Sürüm silme hatası",
+    gameDeleteConfirm: "Bu kurulu sГјrГјm Falon'dan silinsin mi?",
+    gameDeleteDone: "SГјrГјm silindi",
+    gameDeleteError: "SГјrГјm silme hatasД±",
     gameVersionSource: "Kaynak",
-    gameInstallStarted: "Sürüm kurulumu başlıyor",
-    gameInstallDone: "Sürüm kuruldu",
-    gameInstallError: "Sürüm kurulum hatası",
-    gameLaunchError: "Sürüm başlatma hatası",
-    gameNoVersions: "Sürüm bulunamadı",
-    gameNoInstalled: "Henüz kurulu sürüm yok",
+    gameInstallStarted: "SГјrГјm kurulumu baЕџlД±yor",
+    gameInstallDone: "SГјrГјm kuruldu",
+    gameInstallError: "SГјrГјm kurulum hatasД±",
+    gameLaunchError: "SГјrГјm baЕџlatma hatasД±",
+    gameNoVersions: "SГјrГјm bulunamadД±",
+    gameNoInstalled: "HenГјz kurulu sГјrГјm yok",
     gameDownloaded: "indirildi",
     gameInstalling: "Kuruluyor...",
     active: "ACTIVE"
@@ -783,24 +795,24 @@ const I18N = {
 };
 
 const CURRENCY_DATA = {
-  KZT: { label: "🇰🇿 Kazakhstani Tenge", amount: "1000 ₸" },
-  RUB: { label: "🇷🇺 Russian Ruble", amount: "200 ₽" },
-  USD: { label: "🇺🇸 United States Dollar", amount: "3 $" },
-  EUR: { label: "🇪🇺 Euro", amount: "3 €" },
-  UAH: { label: "🇺🇦 Ukrainian Hryvnia", amount: "120 ₴" },
-  KGS: { label: "🇰🇬 Kyrgyzstani Som", amount: "270 сом" },
-  UZS: { label: "🇺🇿 Uzbekistani Sum", amount: "38 000 soʻm" },
-  BYN: { label: "🇧🇾 Belarusian Ruble", amount: "10 Br" },
-  TRY: { label: "🇹🇷 Turkish Lira", amount: "100 ₺" },
-  GBP: { label: "🇬🇧 Pound Sterling", amount: "3 £" },
-  CNY: { label: "🇨🇳 Chinese Yuan", amount: "22 ¥" },
-  JPY: { label: "🇯🇵 Japanese Yen", amount: "450 ¥" },
-  AED: { label: "🇦🇪 UAE Dirham", amount: "12 د.إ" }
+  KZT: { label: "рџ‡°рџ‡ї Kazakhstani Tenge", amount: "1000 в‚ё" },
+  RUB: { label: "рџ‡·рџ‡є Russian Ruble", amount: "200 в‚Ѕ" },
+  USD: { label: "рџ‡єрџ‡ё United States Dollar", amount: "3 $" },
+  EUR: { label: "рџ‡Єрџ‡є Euro", amount: "3 в‚¬" },
+  UAH: { label: "рџ‡єрџ‡¦ Ukrainian Hryvnia", amount: "120 в‚ґ" },
+  KGS: { label: "рџ‡°рџ‡¬ Kyrgyzstani Som", amount: "270 СЃРѕРј" },
+  UZS: { label: "рџ‡єрџ‡ї Uzbekistani Sum", amount: "38 000 soК»m" },
+  BYN: { label: "рџ‡§рџ‡ѕ Belarusian Ruble", amount: "10 Br" },
+  TRY: { label: "рџ‡№рџ‡· Turkish Lira", amount: "100 в‚є" },
+  GBP: { label: "рџ‡¬рџ‡§ Pound Sterling", amount: "3 ВЈ" },
+  CNY: { label: "рџ‡Ёрџ‡і Chinese Yuan", amount: "22 ВҐ" },
+  JPY: { label: "рџ‡Їрџ‡µ Japanese Yen", amount: "450 ВҐ" },
+  AED: { label: "рџ‡¦рџ‡Є UAE Dirham", amount: "12 ШЇ.ШҐ" }
 };
 
 const BUY_METHODS = {
   fiat: {
-    label: "Обычная валюта",
+    label: "РћР±С‹С‡РЅР°СЏ РІР°Р»СЋС‚Р°",
     panel: "buyFiatPanel",
     priceLabel: () => t("buyFiat")
   },
@@ -817,19 +829,19 @@ const BUY_METHODS = {
 };
 
 const BUY_STAR_PLANS = {
-  "1d": { label: "1 день", amount: 10 },
-  "3d": { label: "3 дня", amount: 35 },
-  "7d": { label: "7 дней", amount: 100 },
-  "30d": { label: "1 месяц", amount: 200 },
-  lifetime: { label: "Навсегда", amount: 350 }
+  "1d": { label: "1 РґРµРЅСЊ", amount: 10 },
+  "3d": { label: "3 РґРЅСЏ", amount: 35 },
+  "7d": { label: "7 РґРЅРµР№", amount: 100 },
+  "30d": { label: "1 РјРµСЃСЏС†", amount: 200 },
+  lifetime: { label: "РќР°РІСЃРµРіРґР°", amount: 350 }
 };
 
 const BUY_COIN_PLANS = {
-  "1d": { label: "1 день", amount: 25 },
-  "3d": { label: "3 дня", amount: 100 },
-  "7d": { label: "7 дней", amount: 200 },
-  "30d": { label: "30 дней", amount: 450 },
-  lifetime: { label: "Навсегда", amount: 800 }
+  "1d": { label: "1 РґРµРЅСЊ", amount: 25 },
+  "3d": { label: "3 РґРЅСЏ", amount: 100 },
+  "7d": { label: "7 РґРЅРµР№", amount: 200 },
+  "30d": { label: "30 РґРЅРµР№", amount: 450 },
+  lifetime: { label: "РќР°РІСЃРµРіРґР°", amount: 800 }
 };
 
 const state = {
@@ -839,6 +851,11 @@ const state = {
   lang: localStorage.getItem("falon_lang") || "en",
   backgroundBlur: localStorage.getItem("falon_bg_blur") !== "off",
   uiSquare: localStorage.getItem("falon_ui_square") === "on",
+  windowColor: {
+    primary: localStorage.getItem("falon_window_color_primary") || "#d6ab49",
+    secondary: localStorage.getItem("falon_window_color_secondary") || "#ffd67e",
+    gradient: localStorage.getItem("falon_window_color_gradient") !== "off"
+  },
   buy: {
     method: localStorage.getItem("falon_buy_method") || "fiat",
     currency: localStorage.getItem("falon_buy_currency") || "KZT",
@@ -941,6 +958,78 @@ function toggleUiShape() {
   applyUiShape(!state.uiSquare);
 }
 
+function normalizeColor(value, fallback) {
+  const text = String(value || "").trim();
+  return /^#[0-9a-f]{6}$/i.test(text) ? text : fallback;
+}
+
+function hexToRgb(hex) {
+  const clean = normalizeColor(hex, "#d6ab49").slice(1);
+  return {
+    r: parseInt(clean.slice(0, 2), 16),
+    g: parseInt(clean.slice(2, 4), 16),
+    b: parseInt(clean.slice(4, 6), 16)
+  };
+}
+
+function rgbText(hex) {
+  const { r, g, b } = hexToRgb(hex);
+  return `${r}, ${g}, ${b}`;
+}
+
+function applyWindowColor(save = true) {
+  state.windowColor.primary = normalizeColor(state.windowColor.primary, "#d6ab49");
+  state.windowColor.secondary = normalizeColor(state.windowColor.secondary, "#ffd67e");
+  const primary = rgbText(state.windowColor.primary);
+  const secondary = rgbText(state.windowColor.gradient ? state.windowColor.secondary : state.windowColor.primary);
+  const root = document.documentElement;
+  root.style.setProperty("--falon-accent", state.windowColor.primary);
+  root.style.setProperty("--falon-accent-2", state.windowColor.gradient ? state.windowColor.secondary : state.windowColor.primary);
+  root.style.setProperty("--falon-accent-rgb", primary);
+  root.style.setProperty("--falon-accent-2-rgb", secondary);
+  document.body.classList.toggle("window-gradient-off", !state.windowColor.gradient);
+
+  const primaryInput = $("windowColorPrimary");
+  const secondaryInput = $("windowColorSecondary");
+  const gradientInput = $("windowColorGradient");
+  if (primaryInput) primaryInput.value = state.windowColor.primary;
+  if (secondaryInput) secondaryInput.value = state.windowColor.secondary;
+  if (gradientInput) gradientInput.checked = state.windowColor.gradient;
+
+  if (save) {
+    localStorage.setItem("falon_window_color_primary", state.windowColor.primary);
+    localStorage.setItem("falon_window_color_secondary", state.windowColor.secondary);
+    localStorage.setItem("falon_window_color_gradient", state.windowColor.gradient ? "on" : "off");
+  }
+}
+
+function setWindowColor(part, value) {
+  if (part === "primary") state.windowColor.primary = normalizeColor(value, state.windowColor.primary);
+  if (part === "secondary") state.windowColor.secondary = normalizeColor(value, state.windowColor.secondary);
+  applyWindowColor();
+}
+
+function setWindowColorGradient(enabled) {
+  state.windowColor.gradient = Boolean(enabled);
+  applyWindowColor();
+}
+
+function resetWindowColor() {
+  state.windowColor.primary = "#d6ab49";
+  state.windowColor.secondary = "#ffd67e";
+  state.windowColor.gradient = true;
+  applyWindowColor();
+}
+
+function openWindowColorModal() {
+  applyWindowColor(false);
+  $("windowColorModal")?.classList.remove("hidden");
+}
+
+function closeWindowColorModal() {
+  $("windowColorModal")?.classList.add("hidden");
+}
+
 function applyBackgroundBlur(enabled, save = true) {
   state.backgroundBlur = Boolean(enabled);
   document.body.classList.toggle("bg-blur-off", !state.backgroundBlur);
@@ -1019,8 +1108,8 @@ function log(message) {
 }
 
 function fmtSize(bytes) {
-  if (!bytes) return "0 Б";
-  const units = ["Б", "КБ", "МБ", "ГБ"];
+  if (!bytes) return "0 Р‘";
+  const units = ["Р‘", "РљР‘", "РњР‘", "Р“Р‘"];
   let n = bytes;
   let i = 0;
   while (n >= 1024 && i < units.length - 1) {
@@ -1282,7 +1371,7 @@ function formatRemainingLicenseTime(ms) {
   const hours = Math.floor((totalSeconds % 86400) / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
-  if (days > 0) return `${days}д ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  if (days > 0) return `${days}Рґ ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
@@ -1560,7 +1649,7 @@ function renderNetworkInstallVersions() {
 
   const catalogItems = flattenGameCatalog();
   const seen = new Set();
-  const options = [{ value: "auto", label: "Авто" }];
+  const options = [{ value: "auto", label: "РђРІС‚Рѕ" }];
 
   for (const item of catalogItems) {
     const version = String(item.version || item.short || "").trim();
@@ -1568,7 +1657,7 @@ function renderNetworkInstallVersions() {
     const key = `${item.bucket}|${version}`.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    options.push({ value: `${item.bucket}:${version}`, label: `${version} · ${gameTypeLabel(item.bucket)}` });
+    options.push({ value: `${item.bucket}:${version}`, label: `${version} В· ${gameTypeLabel(item.bucket)}` });
     if (options.length >= 16) break;
   }
 
@@ -1655,7 +1744,7 @@ async function confirmNetworkInstallModal() {
   }
 
   closeNetworkInstallModal();
-  log(`Сеть: ${project.name} → ${version}`);
+  log(`РЎРµС‚СЊ: ${project.name} в†’ ${version}`);
   await installNetworkProject(project, { targetVersion: version, profileIds });
 }
 
@@ -1697,7 +1786,7 @@ function updateNetworkSummary() {
     : state.network.hasMore
       ? t("networkScrollMore")
       : t("networkAllLoaded");
-  setNetworkSummary(`${t("networkShowing")} ${fmtCompactCount(shown)} / ${fmtCompactCount(total)} · ${suffix}`);
+  setNetworkSummary(`${t("networkShowing")} ${fmtCompactCount(shown)} / ${fmtCompactCount(total)} В· ${suffix}`);
 }
 
 function classOrderScore(item) {
@@ -1756,7 +1845,7 @@ function createNetworkCard(project) {
     ? `<img class="network-thumb" src="${escapeHtml(thumb)}" alt="" loading="lazy" />`
     : `<div class="network-thumb network-thumb-fallback">CF</div>`;
   const category = project.category ? `<span class="badge">${escapeHtml(project.category)}</span>` : "";
-  const summary = project.summary ? escapeHtml(project.summary) : "—";
+  const summary = project.summary ? escapeHtml(project.summary) : "вЂ”";
 
   card.innerHTML = `
     <div class="network-thumb-wrap">${logo}</div>
@@ -1766,7 +1855,7 @@ function createNetworkCard(project) {
         ${category}
       </div>
       <p>${summary}</p>
-      <div class="network-meta">${escapeHtml(project.author || "CurseForge")} · ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</div>
+      <div class="network-meta">${escapeHtml(project.author || "CurseForge")} В· ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</div>
       <div class="actions network-actions">
         <button class="networkDetailsBtn">${t("networkDetails")}</button>
         <button class="networkInstallBtn" ${canInstall ? "" : "disabled"}>${t("networkInstall")}</button>
@@ -1861,11 +1950,11 @@ function openNetworkDetails(project) {
       ${logo}
       <div>
         <h3>${escapeHtml(project.name || "CurseForge")}</h3>
-        <p>${escapeHtml(project.author || "CurseForge")} · ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</p>
+        <p>${escapeHtml(project.author || "CurseForge")} В· ${fmtCompactCount(project.downloads)} ${t("networkDownloads")}</p>
         <span class="badge">${escapeHtml(project.category || "Bedrock")}</span>
       </div>
     </div>
-    <div class="network-details-summary">${escapeHtml(project.summary || "—")}</div>
+    <div class="network-details-summary">${escapeHtml(project.summary || "вЂ”")}</div>
     ${gallery}
     <div class="network-details-actions">
       <button id="networkDetailsInstall" ${canInstall ? "" : "disabled"}>${t("networkInstall")}</button>
@@ -1898,7 +1987,7 @@ async function loadNetworkSettings() {
     const settings = await window.mcApi.curseforgeSettings();
     if (statusEl) {
       statusEl.textContent = settings?.hasApiKey
-        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` · ${settings.apiKeyMasked}` : ""}`
+        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` В· ${settings.apiKeyMasked}` : ""}`
         : t("networkKeyRequired");
       statusEl.classList.toggle("is-ready", Boolean(settings?.hasApiKey));
     }
@@ -1923,7 +2012,7 @@ async function saveNetworkSettings() {
     state.network.hasMore = true;
     if (statusEl) {
       statusEl.textContent = settings?.hasApiKey
-        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` · ${settings.apiKeyMasked}` : ""}`
+        ? `${settings.apiKeySource === "bundled" ? t("networkKeyBundled") : t("networkKeyReady")}${settings.apiKeyMasked ? ` В· ${settings.apiKeyMasked}` : ""}`
         : t("networkKeyRequired");
       statusEl.classList.toggle("is-ready", Boolean(settings?.hasApiKey));
     }
@@ -2088,7 +2177,7 @@ async function installNetworkProject(project, options = {}) {
   }
 
   try {
-    if (options.targetVersion) log(`Сеть: установка под ${options.targetVersion}`);
+    if (options.targetVersion) log(`РЎРµС‚СЊ: СѓСЃС‚Р°РЅРѕРІРєР° РїРѕРґ ${options.targetVersion}`);
     log(t("networkDownloading"));
     const results = await window.mcApi.curseforgeInstall({
       root: state.root,
@@ -2151,7 +2240,7 @@ function setSelectedFile(file) {
   state.file = file;
   const name = file.split(/[\\/]/).pop();
   const fileName = $("fileName");
-  if (fileName) fileName.textContent = name || "—";
+  if (fileName) fileName.textContent = name || "вЂ”";
   const drop = $("dropZone");
   if (drop) {
     drop.classList.add("has-file");
@@ -2198,7 +2287,7 @@ async function installSelected(customProfilePath = null) {
       btn.dataset.prevText = btn.textContent || "";
       btn.textContent = t("installing");
     }
-    setInstallStatus(`${t("installing")}…`, "is-warn");
+    setInstallStatus(`${t("installing")}вЂ¦`, "is-warn");
     log(`${t("installing")}: ${file} -> ${profileIds.length} profiles`);
     const results = await window.mcApi.install({
       root: state.root,
@@ -2222,8 +2311,8 @@ async function installSelected(customProfilePath = null) {
       }
     }
 
-    setInstallStatus(`${t("install")} OK — ${results.length} target(s)`, "is-ok");
-    log(`${t("install")} OK — ${results.length} target(s)`);
+    setInstallStatus(`${t("install")} OK вЂ” ${results.length} target(s)`, "is-ok");
+    log(`${t("install")} OK вЂ” ${results.length} target(s)`);
 
     await scan();
     await refreshResources();
@@ -2373,10 +2462,10 @@ function catalogStatusForItem(item) {
     ? state.game.validationArchive.items
     : {};
   const record = cache[key];
-  if (bucket === "legacy" && archive[key]) return { kind: "bad", label: "нерабочая" };
-  if (record?.valid === true) return { kind: "ok", label: "рабочая" };
-  if (record?.hardInvalid === true) return { kind: "bad", label: "нерабочая" };
-  return { kind: "warn", label: "не проверена" };
+  if (bucket === "legacy" && archive[key]) return { kind: "bad", label: "РЅРµСЂР°Р±РѕС‡Р°СЏ" };
+  if (record?.valid === true) return { kind: "ok", label: "СЂР°Р±РѕС‡Р°СЏ" };
+  if (record?.hardInvalid === true) return { kind: "bad", label: "РЅРµСЂР°Р±РѕС‡Р°СЏ" };
+  return { kind: "warn", label: "РЅРµ РїСЂРѕРІРµСЂРµРЅР°" };
 }
 
 function flattenGameCatalog() {
@@ -2499,7 +2588,7 @@ function renderInstalledGameVersions() {
         </div>
       </div>
       <div class="game-card-actions">
-        <button class="game-launch-btn" ${state.game.launching ? "disabled" : ""}>${state.game.launching && String(state.game.launchingName || "") === String(item.name || item.version || "") ? "Запуск…" : t("gameLaunch")}</button>
+        <button class="game-launch-btn" ${state.game.launching ? "disabled" : ""}>${state.game.launching && String(state.game.launchingName || "") === String(item.name || item.version || "") ? "Р—Р°РїСѓСЃРєвЂ¦" : t("gameLaunch")}</button>
         ${item.systemInstalled ? "" : `<button class="game-delete-btn danger" ${state.game.launching ? "disabled" : ""}>${t("gameDelete")}</button>`}
       </div>
     `;
@@ -2569,8 +2658,8 @@ function updateGameProgress(payload = {}) {
   if (bar) bar.style.width = total > 0 ? `${percent}%` : "0%";
   if (text) {
     text.textContent = total > 0
-      ? `${fmtSize(downloaded)} / ${fmtSize(total)} · ${percent}%`
-      : downloaded > 0 ? `${fmtSize(downloaded)} ${t("gameDownloaded")}` : "—";
+      ? `${fmtSize(downloaded)} / ${fmtSize(total)} В· ${percent}%`
+      : downloaded > 0 ? `${fmtSize(downloaded)} ${t("gameDownloaded")}` : "вЂ”";
   }
 }
 
@@ -2599,7 +2688,7 @@ function handleGameCatalogValidationProgress(payload = {}) {
 
   if (stage === "done") {
     state.game.validating = false;
-    setGameStatus(`Проверка версий завершена${total ? `: ${valid}/${total}` : ""}`);
+    setGameStatus(`РџСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№ Р·Р°РІРµСЂС€РµРЅР°${total ? `: ${valid}/${total}` : ""}`);
     renderGameCatalog();
     return;
   }
@@ -2607,7 +2696,7 @@ function handleGameCatalogValidationProgress(payload = {}) {
   if (stage === "fallback") {
     state.game.validating = false;
     const error = payload.error ? `: ${payload.error}` : "";
-    setGameStatus(`Фоновая проверка версий не завершилась${error}`);
+    setGameStatus(`Р¤РѕРЅРѕРІР°СЏ РїСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№ РЅРµ Р·Р°РІРµСЂС€РёР»Р°СЃСЊ${error}`);
     return;
   }
 
@@ -2618,9 +2707,9 @@ function handleGameCatalogValidationProgress(payload = {}) {
 
   state.game.validating = true;
   if (total > 0) {
-    setGameStatus(`Фоновая проверка версий: ${completed}/${total} • ${percent || 0}% • ok ${valid} • bad ${invalid}`);
+    setGameStatus(`Р¤РѕРЅРѕРІР°СЏ РїСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№: ${completed}/${total} вЂў ${percent || 0}% вЂў ok ${valid} вЂў bad ${invalid}`);
   } else {
-    setGameStatus("Фоновая проверка версий...");
+    setGameStatus("Р¤РѕРЅРѕРІР°СЏ РїСЂРѕРІРµСЂРєР° РІРµСЂСЃРёР№...");
   }
 }
 
@@ -2658,8 +2747,8 @@ function showGameLaunchOverlay(title, message, tone = "loading", autoHideMs = 0)
   overlay.classList.remove("hidden", "success", "error");
   if (tone === "success") overlay.classList.add("success");
   if (tone === "error") overlay.classList.add("error");
-  if (titleEl) titleEl.textContent = String(title || "Запускаем игру…");
-  if (messageEl) messageEl.textContent = String(message || "Подготавливаю Minecraft.");
+  if (titleEl) titleEl.textContent = String(title || "Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓвЂ¦");
+  if (messageEl) messageEl.textContent = String(message || "РџРѕРґРіРѕС‚Р°РІР»РёРІР°СЋ Minecraft.");
   if (autoHideMs > 0) {
     state.game.launchOverlayTimer = setTimeout(() => {
       overlay.classList.add("hidden");
@@ -2691,8 +2780,8 @@ function handleGameLaunchStatus(payload = {}) {
     state.game.launchingName = "";
     renderInstalledGameVersions();
     showGameLaunchOverlay(
-      title || (stage === "launch-pending" ? "Команда запуска передана" : "Игра запущена корректно"),
-      message || (stage === "launch-pending" ? "Windows приняла запуск Minecraft. Falon больше не ждёт бесконечно." : "Окно Minecraft выведено на экран."),
+      title || (stage === "launch-pending" ? "РљРѕРјР°РЅРґР° Р·Р°РїСѓСЃРєР° РїРµСЂРµРґР°РЅР°" : "РРіСЂР° Р·Р°РїСѓС‰РµРЅР° РєРѕСЂСЂРµРєС‚РЅРѕ"),
+      message || (stage === "launch-pending" ? "Windows РїСЂРёРЅСЏР»Р° Р·Р°РїСѓСЃРє Minecraft. Falon Р±РѕР»СЊС€Рµ РЅРµ Р¶РґС‘С‚ Р±РµСЃРєРѕРЅРµС‡РЅРѕ." : "РћРєРЅРѕ Minecraft РІС‹РІРµРґРµРЅРѕ РЅР° СЌРєСЂР°РЅ."),
       "success",
       stage === "launch-pending" ? 4200 : 2600
     );
@@ -2703,12 +2792,12 @@ function handleGameLaunchStatus(payload = {}) {
     state.game.launching = false;
     state.game.launchingName = "";
     renderInstalledGameVersions();
-    showGameLaunchOverlay(title || "Запуск не завершён", message || "Minecraft не открыл окно.", "error", 5200);
+    showGameLaunchOverlay(title || "Р—Р°РїСѓСЃРє РЅРµ Р·Р°РІРµСЂС€С‘РЅ", message || "Minecraft РЅРµ РѕС‚РєСЂС‹Р» РѕРєРЅРѕ.", "error", 5200);
     return;
   }
 
   if (stage) {
-    showGameLaunchOverlay(title || "Запускаем игру…", message || "Подготавливаю Minecraft.");
+    showGameLaunchOverlay(title || "Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓвЂ¦", message || "РџРѕРґРіРѕС‚Р°РІР»РёРІР°СЋ Minecraft.");
   }
 }
 
@@ -2718,8 +2807,8 @@ async function launchGameVersion(name) {
   state.game.launchingName = String(name || "");
   renderInstalledGameVersions();
   const label = String(name || "Bedrock");
-  setGameStatus(`Запускаем игру: ${label}`);
-  showGameLaunchOverlay("Запускаем игру…", "Подготавливаю Minecraft и жду окно игры.");
+  setGameStatus(`Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓ: ${label}`);
+  showGameLaunchOverlay("Р—Р°РїСѓСЃРєР°РµРј РёРіСЂСѓвЂ¦", "РџРѕРґРіРѕС‚Р°РІР»РёРІР°СЋ Minecraft Рё Р¶РґСѓ РѕРєРЅРѕ РёРіСЂС‹.");
 
   try {
     const result = await window.mcApi.gameLaunch(name);
@@ -2728,7 +2817,7 @@ async function launchGameVersion(name) {
       state.game.launching = false;
       state.game.launchingName = "";
       renderInstalledGameVersions();
-      showGameLaunchOverlay("Игра запущена корректно", message || "Окно Minecraft выведено на экран.", "success", 2600);
+      showGameLaunchOverlay("РРіСЂР° Р·Р°РїСѓС‰РµРЅР° РєРѕСЂСЂРµРєС‚РЅРѕ", message || "РћРєРЅРѕ Minecraft РІС‹РІРµРґРµРЅРѕ РЅР° СЌРєСЂР°РЅ.", "success", 2600);
     }
     log(`${t("gameLaunch")}: ${name}`);
   } catch (error) {
@@ -2738,7 +2827,7 @@ async function launchGameVersion(name) {
     renderInstalledGameVersions();
     setGameStatus(`${t("gameLaunchError")}: ${message}`);
     log(`${t("gameLaunchError")}: ${message}`);
-    showGameLaunchOverlay("Запуск не завершён", message, "error", 6200);
+    showGameLaunchOverlay("Р—Р°РїСѓСЃРє РЅРµ Р·Р°РІРµСЂС€С‘РЅ", message, "error", 6200);
   }
 }
 
@@ -2787,6 +2876,14 @@ addEventListener("DOMContentLoaded", async () => {
   $("starsPlanSelect").onchange = (e) => setBuyStarPlan(e.target.value);
   $("coinsPlanSelect").onchange = (e) => setBuyCoinPlan(e.target.value);
   $("checkoutModal").addEventListener("click", (e) => { if (e.target.id === "checkoutModal") closeCheckoutModal(); });
+  $("windowColorBtn").onclick = openWindowColorModal;
+  $("closeWindowColorModal").onclick = closeWindowColorModal;
+  $("windowColorDone").onclick = closeWindowColorModal;
+  $("windowColorReset").onclick = resetWindowColor;
+  $("windowColorPrimary").oninput = (e) => setWindowColor("primary", e.target.value);
+  $("windowColorSecondary").oninput = (e) => setWindowColor("secondary", e.target.value);
+  $("windowColorGradient").onchange = (e) => setWindowColorGradient(e.target.checked);
+  $("windowColorModal").addEventListener("click", (e) => { if (e.target.id === "windowColorModal") closeWindowColorModal(); });
   $("closeFreeKeyModal").onclick = closeFreeKeyModal;
   $("openCreatorXboxBtn").onclick = openCreatorXboxProfile;
   $("ackFreeKeyModal").onclick = closeFreeKeyModal;
@@ -2957,6 +3054,7 @@ addEventListener("DOMContentLoaded", async () => {
 
   applyBackgroundBlur(state.backgroundBlur, false);
   applyUiShape(state.uiSquare, false);
+  applyWindowColor(false);
   const gameFilterSelect = $("gameTypeFilter");
   if (gameFilterSelect) gameFilterSelect.value = state.game.filter;
   await loadSavedWallpaper();
@@ -2973,3 +3071,4 @@ addEventListener("DOMContentLoaded", async () => {
   } catch {}
   $("accessKey").focus();
 });
+
